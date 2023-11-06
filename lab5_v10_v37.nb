@@ -1,0 +1,3392 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    164346,       3384]
+NotebookOptionsPosition[    163340,       3349]
+NotebookOutlinePosition[    163741,       3366]
+CellTagsIndexPosition[    163698,       3363]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "\:041b\:0430\:0431\:043e\:0440\:0430\:0442\:043e\:0440\:043d\:0430\:044f \
+\:0440\:0430\:0431\:043e\:0442\:0430 \:21165\n\n\:0414\:0430\:043d\:043e:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["p", "1"], "(", 
+       RowBox[{
+        SubscriptBox["x", "1"], ",", 
+        SubscriptBox["y", "1"]}], ")"}], ",", 
+      RowBox[{
+       SubscriptBox["p", "2"], "(", 
+       RowBox[{
+        SubscriptBox["x", "2"], ",", 
+        SubscriptBox["y", "2"]}], ")"}], ",", "...", ",", 
+      RowBox[{
+       SubscriptBox["p", "n"], "(", 
+       RowBox[{
+        SubscriptBox["x", "n"], ",", 
+        SubscriptBox["y", "n"]}], ")"}]}], "}"}]}], TraditionalForm]]],
+ " \[LongDash] \:043f\:0440\:043e\:0441\:0442\:043e\:0439 \:043c\:043d\:043e\
+\:0433\:043e\:0443\:0433\:043e\:043b\:044c\:043d\:0438\:043a;\n\nD \
+\[LongDash] \:043d\:0435\:043a\:043e\:0442\:043e\:0440\:0430\:044f \:043a\
+\:043e\:043d\:0441\:0442\:0430\:043d\:0442\:0430;\n\n\:041d\:0435\:043e\:0431\
+\:0445\:043e\:0434\:0438\:043c\:043e \:0440\:0435\:0430\:043b\:0438\:0437\
+\:043e\:0432\:0430\:0442\:044c \:0430\:043d\:0438\:043c\:0430\:0446\:0438\
+\:044e, \:0432 \:043a\:043e\:0442\:043e\:0440\:043e\:0439 \:0442\:043e\:0447\
+\:043a\:0438 \:0434\:0432\:0438\:0436\:0443\:0442\:0441\:044f \:0441 \:043f\
+\:043e\:0441\:0442\:043e\:044f\:043d\:043d\:044b\:043c\:0438 \:0441\:043a\
+\:043e\:0440\:043e\:0441\:0442\:044f\:043c\:0438 \:0438 \:043d\:0430\:043f\
+\:0440\:0430\:0432\:043b\:0435\:043d\:0438\:044f\:043c\:0438. \:041a\:0430\
+\:043a \:0442\:043e\:043b\:044c\:043a\:043e \:0440\:0430\:0441\:0441\:0442\
+\:043e\:044f\:043d\:0438\:0435 \:043c\:0435\:0436\:0434\:0443 \:0434\:0432\
+\:0443\:043c\:044f \:0442\:043e\:0447\:043a\:0430\:043c\:0438 \:0441\:0442\
+\:0430\:043d\:043e\:0432\:0438\:0442\:0441\:044f \:0431\:043e\:043b\:044c\
+\:0448\:0435, \:0447\:0435\:043c D \:044d\:0442\:0438 \
+\:0442\:043e\:0447\:043a\:0438 \:043c\:0435\:043d\:044f\:044e\:0442 \:0441\
+\:0432\:043e\:0438 \:0441\:043a\:043e\:0440\:043e\:0441\:0442\:0438 \:043d\
+\:0430 \:043f\:0440\:043e\:0442\:0438\:0432\:043e\:043f\:043e\:043b\:043e\
+\:0436\:043d\:044b\:0435.\n\n\:041f\:0440\:0438\:043c\:0435\:0447\:0430\:043d\
+\:0438\:044f: \:041d\:0430 \:043a\:0430\:0436\:0434\:043e\:043c \:0448\:0430\
+\:0433\:0435 \:0430\:043d\:0438\:043c\:0430\:0446\:0438\:0438 \:043d\:0435\
+\:043e\:0431\:0445\:043e\:0434\:0438\:043c\:043e \:043d\:0430\:0445\:043e\
+\:0434\:0438\:0442\:044c \:0434\:0432\:0435 \:0441\:0430\:043c\:044b\:0435 \
+\:0443\:0434\:0430\:043b\:0435\:043d\:043d\:044b\:0435 \:0442\:043e\:0447\
+\:043a\:0438, \:0438\:0441\:043f\:043e\:043b\:044c\:0437\:0443\:044f \:0430\
+\:043b\:0433\:043e\:0440\:0438\:0442\:043c \:043e\:0442\:044b\:0441\:043a\
+\:0430\:043d\:0438\:044f \
+\[OpenCurlyDoubleQuote]\:0434\:0438\:0430\:043c\:0435\:0442\:0440\:0430 \
+\:043c\:043d\:043e\:0436\:0435\:0441\:0442\:0432\:0430\[CloseCurlyDoubleQuote]\
+. \:041f\:0435\:0440\:0432\:044b\:043c \:0448\:0430\:0433\:043e\:043c \:044d\
+\:0442\:043e\:0433\:043e \:0430\:043b\:0433\:043e\:0440\:0438\:0442\:043c\
+\:0430 \:044f\:0432\:043b\:044f\:0435\:0442\:0441\:044f \:043f\:043e\:0441\
+\:0442\:0440\:043e\:0435\:043d\:0438\:0435 \:0432\:044b\:043f\:0443\:043a\
+\:043b\:043e\:0439 \:043e\:0431\:043e\:043b\:043e\:0447\:043a\:0438, \:043a\
+\:043e\:0442\:043e\:0440\:043e\:0435 \:043d\:0435\:043e\:0431\:0445\:043e\
+\:0434\:0438\:043c\:043e \:0440\:0435\:0430\:043b\:0438\:0437\:043e\:0432\
+\:0430\:0442\:044c \
+\[OpenCurlyDoubleQuote]\:0430\:043b\:0433\:043e\:0440\:0438\:0442\:043c\:043e\
+\:043c \:0414\:0436\:0430\:0440\:0432\:0438\:0441\:0430\
+\[CloseCurlyDoubleQuote]\n\n\:0420\:0435\:0448\:0435\:043d\:0438\:0435:\n"
+}], "Text",
+ CellMargins->{{67.25, 10.}, {7., 7.}},
+ CellChangeTimes->{{3.856327211231178*^9, 3.85632742864467*^9}, {
+  3.8563276149808397`*^9, 3.856327684407811*^9}, {3.8569292367300563`*^9, 
+  3.856929240205817*^9}, {3.856929272718442*^9, 3.856930352258294*^9}, {
+  3.8569305521316366`*^9, 3.8569305882105756`*^9}, {3.85693149474772*^9, 
+  3.8569315063877*^9}, {3.8586568644979053`*^9, 3.8586570739871845`*^9}, {
+  3.8586575398098755`*^9, 3.858657540840268*^9}, {3.8586624557279744`*^9, 
+  3.858662468004269*^9}, {3.8608985553156853`*^9, 3.8608985595535636`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "FUNCTIONS", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:041e\:043f\:0440\:0435\:0434\:0435\:043b\:0435\:043d\:0438\:0435", " ", 
+    "\:043f\:043e\:043b\:043e\:0436\:0435\:043d\:0438\:044f", " ", 
+    "\:0442\:043e\:0447\:043a\:0438", " ", "C", " ", 
+    "\:043e\:0442\:043d\:043e\:0441\:0438\:0442\:0435\:043b\:044c\:043d\:043e\
+", " ", "\:043e\:0442\:0440\:0435\:0437\:043a\:0430", " ", "AB"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"rotate", "[", 
+     RowBox[{"A_", ",", "B_", ",", "C_"}], "]"}], ":=", 
+    RowBox[{"(", "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"B", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "-", 
+          RowBox[{"A", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"C", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "-", 
+          RowBox[{"B", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"B", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "-", 
+          RowBox[{"A", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"C", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "-", 
+          RowBox[{"B", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}]}], "]"}], 
+     "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:041e\:043f\:0440\:0435\:0434\:0435\:043b\:0435\:043d\:0438\:0435", " ",
+      "\:043f\:043b\:043e\:0449\:0430\:0434\:0438", " ", 
+     "\:0442\:0440\:0435\:0443\:0433\:043e\:043b\:044c\:043d\:0438\:043a\:0430\
+", " ", "\:043f\:043e", " ", "\:0442\:0440\:0435\:043c", " ", 
+     "\:0442\:043e\:0447\:043a\:0430\:043c"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"TriangleArea", "[", 
+     RowBox[{"l1_", ",", "l2_", ",", "l3_"}], "]"}], ":=", 
+    RowBox[{"(", "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", 
+      RowBox[{
+       RowBox[{"Norm", "@", 
+        RowBox[{"Cross", "[", 
+         RowBox[{
+          RowBox[{"Append", "[", 
+           RowBox[{
+            RowBox[{"l2", "-", "l1"}], ",", "0"}], "]"}], ",", 
+          RowBox[{"Append", "[", 
+           RowBox[{
+            RowBox[{"l3", "-", "l1"}], ",", "0"}], "]"}]}], "]"}]}], "/", 
+       "2"}], "]"}], "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0415\:0432\:043a\:043b\:0438\:0434\:043e\:0432\:043e", " ", 
+     "\:0440\:0430\:0441\:0441\:0442\:043e\:044f\:043d\:0438\:0435", " ", 
+     "\:043c\:0435\:0436\:0434\:0443", " ", 
+     "\:0442\:043e\:0447\:043a\:0430\:043c\:0438"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"\[Rho]1", "[", 
+     RowBox[{"x1_", ",", "x2_"}], "]"}], ":=", 
+    RowBox[{"EuclideanDistance", "[", 
+     RowBox[{"x1", ",", "x2"}], "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0410\:043b\:0433\:043e\:0440\:0438\:0442\:043c", " ", 
+     "\:0414\:0436\:0430\:0440\:0432\:0438\:0441\:0430"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"convexPol", " ", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Jarvis", "[", "polygon_", "]"}], ":=", 
+    RowBox[{"(", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"H", "=", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"nJarvis", "=", 
+       RowBox[{"Length", "[", "polygon", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"P", "=", 
+       RowBox[{"Range", "[", "nJarvis", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"iJarvis", "=", "2"}], ",", " ", 
+        RowBox[{"iJarvis", "\[LessEqual]", "nJarvis"}], ",", 
+        RowBox[{"iJarvis", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"polygon", "[", 
+              RowBox[{"[", 
+               RowBox[{"P", "[", 
+                RowBox[{"[", "iJarvis", "]"}], "]"}], "]"}], "]"}], "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "<", 
+            RowBox[{
+             RowBox[{"polygon", "[", 
+              RowBox[{"[", 
+               RowBox[{"P", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"P", "[", 
+                RowBox[{"[", "iJarvis", "]"}], "]"}], ",", 
+               RowBox[{"P", "[", 
+                RowBox[{"[", "1", "]"}], "]"}]}], "}"}], "=", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"P", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], ",", 
+               RowBox[{"P", "[", 
+                RowBox[{"[", "iJarvis", "]"}], "]"}]}], "}"}]}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}],
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"H", ",", " ", 
+        RowBox[{"P", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Print", "[", "H", "]"}], ";"}], "\[IndentingNewLine]", 
+       "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"P", "=", 
+       RowBox[{"Delete", "[", 
+        RowBox[{"P", ",", "1"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"P", ",", 
+        RowBox[{"H", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{"True", ",", " ", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"right", " ", "=", " ", "1"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"iJarvis2", "=", "2"}], ",", 
+           RowBox[{"iJarvis2", "\[LessEqual]", " ", 
+            RowBox[{"Length", "[", "P", "]"}]}], ",", 
+           RowBox[{"iJarvis2", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"rotate", "[", 
+                RowBox[{
+                 RowBox[{"polygon", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"H", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"Length", "[", "H", "]"}], "]"}], "]"}], "]"}], 
+                  "]"}], ",", 
+                 RowBox[{"polygon", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"P", "[", 
+                    RowBox[{"[", "right", "]"}], "]"}], "]"}], "]"}], ",", 
+                 RowBox[{"polygon", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"P", "[", 
+                    RowBox[{"[", "iJarvis2", "]"}], "]"}], "]"}], "]"}]}], 
+                "]"}], "<", "0"}], ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"right", " ", "=", " ", "iJarvis2"}], ";"}]}], 
+             "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", 
+          "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"P", "[", 
+              RowBox[{"[", "right", "]"}], "]"}], "\[Equal]", " ", 
+             RowBox[{"H", "[", 
+              RowBox[{"[", "1", "]"}], "]"}]}], "||", 
+            RowBox[{
+             RowBox[{"Length", "[", "P", "]"}], "\[Equal]", "0"}]}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Break", "[", "]"}], ",", " ", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"H", ",", 
+              RowBox[{"P", "[", 
+               RowBox[{"[", "right", "]"}], "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"P", "=", 
+             RowBox[{"Delete", "[", 
+              RowBox[{"P", ",", "right"}], "]"}]}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}],
+       ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Do", "[", 
+         RowBox[{
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"convexPol", ",", " ", 
+            RowBox[{"polygon", "[", 
+             RowBox[{"[", 
+              RowBox[{"H", "[", 
+               RowBox[{"[", "l", "]"}], "]"}], "]"}], "]"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"l", ",", "1", ",", 
+            RowBox[{"Length", "[", "H", "]"}]}], "}"}]}], "]"}], ";"}], 
+       "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"H", "=", 
+       RowBox[{"DeleteDuplicates", "[", "H", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "H", "]"}]}], "\[IndentingNewLine]", ")"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0410\:043b\:0433\:043e\:0440\:0438\:0442\:043c", " ", 
+     "\:043d\:0430\:0445\:043e\:0436\:0434\:0435\:043d\:0438\:044f", " ", 
+     "\:0434\:0438\:0430\:043c\:0435\:0442\:0440\:0430", " ", 
+     "\:0432\:044b\:043f\:0443\:043a\:043b\:043e\:0439", " ", 
+     "\:043e\:0431\:043e\:043b\:043e\:0447\:043a\:0438"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0418\:043d\:0434\:0435\:043a\:0441\:044b", " ", 
+     "\:043d\:0430\:0438\:0431\:043e\:043b\:0435\:0435", " ", 
+     "\:0443\:0434\:0430\:0435\:043d\:043d\:044b\:0445", " ", 
+     "\:0442\:043e\:0447\:0435\:043a", " ", "\:0432", " ", 
+     "\:043c\:0430\:0441\:0441\:0438\:0432\:0435", " ", "arrPoints"}], "*)"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"diameterCH", "[", "P_", "]"}], ":=", 
+     RowBox[{"(", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"index1", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"index2", " ", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"size", "=", 
+        RowBox[{"Length", "[", "P", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Print", "[", 
+          RowBox[{"{", 
+           RowBox[{"size", ",", 
+            RowBox[{"Length", "[", "arrPoints", "]"}]}], "}"}], "]"}], ";"}], 
+        "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"start", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"end", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"diameter", "=", "0"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"iDiameter", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"While", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"TriangleArea", "[", 
+           RowBox[{
+            RowBox[{"P", "[", 
+             RowBox[{"[", "size", "]"}], "]"}], ",", 
+            RowBox[{"P", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", 
+            RowBox[{"P", "[", 
+             RowBox[{"[", "iDiameter", "]"}], "]"}]}], "]"}], "<", 
+          RowBox[{"TriangleArea", "[", 
+           RowBox[{
+            RowBox[{"P", "[", 
+             RowBox[{"[", "size", "]"}], "]"}], ",", 
+            RowBox[{"P", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", 
+            RowBox[{"P", "[", 
+             RowBox[{"[", 
+              RowBox[{
+               RowBox[{"Mod", "[", 
+                RowBox[{"iDiameter", ",", "size"}], "]"}], "+", "1"}], "]"}], 
+             "]"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"iDiameter", "++"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"start", "=", "iDiameter"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"iDiameter", "=", "start"}], ";"}], "\[IndentingNewLine]", 
+        "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"jDiamerer", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"While", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"TriangleArea", "[", 
+           RowBox[{
+            RowBox[{"P", "[", 
+             RowBox[{"[", "jDiamerer", "]"}], "]"}], ",", 
+            RowBox[{"P", "[", 
+             RowBox[{"[", 
+              RowBox[{
+               RowBox[{"Mod", "[", 
+                RowBox[{"jDiamerer", ",", "size"}], "]"}], "+", "1"}], "]"}], 
+             "]"}], ",", 
+            RowBox[{"P", "[", 
+             RowBox[{"[", "iDiameter", "]"}], "]"}]}], "]"}], "\[LessEqual]", 
+          RowBox[{"TriangleArea", "[", 
+           RowBox[{
+            RowBox[{"P", "[", 
+             RowBox[{"[", "jDiamerer", "]"}], "]"}], ",", 
+            RowBox[{"P", "[", 
+             RowBox[{"[", 
+              RowBox[{
+               RowBox[{"Mod", "[", 
+                RowBox[{"jDiamerer", ",", "size"}], "]"}], "+", "1"}], "]"}], 
+             "]"}], ",", 
+            RowBox[{"P", "[", 
+             RowBox[{"[", 
+              RowBox[{
+               RowBox[{"Mod", "[", 
+                RowBox[{"iDiameter", ",", "size"}], "]"}], "+", "1"}], "]"}], 
+             "]"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"iDiameter", "++"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"end", "=", "iDiameter"}]}]}], "\[IndentingNewLine]", "]"}],
+        ";", "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"iDiameter2", "=", "start"}], ",", 
+         RowBox[{"iDiameter2", "<", "end"}], ",", 
+         RowBox[{"iDiameter2", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"EuclideanDistance", "[", 
+             RowBox[{
+              RowBox[{"P", "[", 
+               RowBox[{"[", "jDiamerer", "]"}], "]"}], ",", 
+              RowBox[{"P", "[", 
+               RowBox[{"[", "iDiameter2", "]"}], "]"}]}], "]"}], ">", 
+            "diameter"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"diameter", "=", 
+            RowBox[{"EuclideanDistance", "[", 
+             RowBox[{
+              RowBox[{"P", "[", 
+               RowBox[{"[", "jDiamerer", "]"}], "]"}], ",", 
+              RowBox[{"P", "[", 
+               RowBox[{"[", "iDiameter2", "]"}], "]"}]}], "]"}]}]}], 
+          "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"lDiameter", "=", "1"}], ",", 
+         RowBox[{"lDiameter", "\[LessEqual]", 
+          RowBox[{"Length", "[", "arrPoints", "]"}]}], ",", 
+         RowBox[{"lDiameter", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"arrPoints", "[", 
+              RowBox[{"[", "lDiameter", "]"}], "]"}], "\[Equal]", 
+             RowBox[{"P", "[", 
+              RowBox[{"[", "jDiamerer", "]"}], "]"}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"index1", " ", "=", " ", "lDiameter"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"arrPoints", "[", 
+              RowBox[{"[", "lDiameter", "]"}], "]"}], "\[Equal]", 
+             RowBox[{"P", "[", 
+              RowBox[{"[", "iDiameter2", "]"}], "]"}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"index2", "=", "lDiameter"}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}], 
+       ";", "\[IndentingNewLine]", 
+       RowBox[{"start", "=", "end"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"jDiamerer", "++"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", 
+        RowBox[{"{", 
+         RowBox[{"diameter", ",", "index1", ",", "index2"}], "}"}], "]"}]}], 
+      "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"diameterCH2", "[", "conPol_", "]"}], ":=", 
+    RowBox[{"Block", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"start", "=", "0"}], ",", 
+        RowBox[{"index1", "=", "0"}], ",", 
+        RowBox[{"index2", "=", "0"}], ",", 
+        RowBox[{"end", "=", "0"}], ",", 
+        RowBox[{"kDCH2", "=", "0"}], ",", 
+        RowBox[{"iDCH2", "=", "0"}], ",", 
+        RowBox[{"dDCH2", "=", "0"}]}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"size", "=", 
+        RowBox[{"Length", "[", "conPol", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"iDCH2", "=", "2"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"dDCH2", "=", "0"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"While", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"TriangleArea", "[", 
+           RowBox[{
+            RowBox[{"conPol", "[", 
+             RowBox[{"[", "size", "]"}], "]"}], ",", 
+            RowBox[{"conPol", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", 
+            RowBox[{"conPol", "[", 
+             RowBox[{"[", "iDCH2", "]"}], "]"}]}], "]"}], "<", 
+          RowBox[{"TriangleArea", "[", 
+           RowBox[{
+            RowBox[{"conPol", "[", 
+             RowBox[{"[", "size", "]"}], "]"}], ",", 
+            RowBox[{"conPol", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", 
+            RowBox[{"conPol", "[", 
+             RowBox[{"[", 
+              RowBox[{"iDCH2", "+", "1"}], "]"}], "]"}]}], "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"iDCH2", "++"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"start", "=", "iDCH2"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"jDCH2", "=", "1"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"While", "[", 
+        RowBox[{
+         RowBox[{"start", "<", "size"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"kDCH2", "=", "start"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"start", "=", "1"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"While", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"TriangleArea", "[", 
+              RowBox[{
+               RowBox[{"conPol", "[", 
+                RowBox[{"[", "jDCH2", "]"}], "]"}], ",", 
+               RowBox[{"conPol", "[", 
+                RowBox[{"[", 
+                 RowBox[{"jDCH2", "+", "1"}], "]"}], "]"}], ",", 
+               RowBox[{"conPol", "[", 
+                RowBox[{"[", "kDCH2", "]"}], "]"}]}], "]"}], "\[LessEqual]", 
+             RowBox[{"TriangleArea", "[", 
+              RowBox[{
+               RowBox[{"conPol", "[", 
+                RowBox[{"[", "jDCH2", "]"}], "]"}], ",", 
+               RowBox[{"conPol", "[", 
+                RowBox[{"[", 
+                 RowBox[{"jDCH2", "+", "1"}], "]"}], "]"}], ",", 
+               RowBox[{"conPol", "[", 
+                RowBox[{"[", 
+                 RowBox[{"kDCH2", "+", "1"}], "]"}], "]"}]}], "]"}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"kDCH2", "++"}], ";", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"kDCH2", "\[Equal]", "size"}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Break", "[", "]"}], ";"}]}], "\[IndentingNewLine]", 
+              "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"end", "=", "kDCH2"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"iDCH2", "=", "start"}], ",", 
+            RowBox[{"iDCH2", "<=", "end"}], ",", 
+            RowBox[{"iDCH2", "++"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"EuclideanDistance", "[", 
+                RowBox[{
+                 RowBox[{"conPol", "[", 
+                  RowBox[{"[", "iDCH2", "]"}], "]"}], ",", 
+                 RowBox[{"conPol", "[", 
+                  RowBox[{"[", "jDCH2", "]"}], "]"}]}], "]"}], ">", "dDCH2"}],
+               ",", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"index1", "=", "iDCH2"}], ";", "\[IndentingNewLine]", 
+               RowBox[{"index2", "=", "jDCH2"}], ";", "\[IndentingNewLine]", 
+               RowBox[{"dDCH2", "=", 
+                RowBox[{"EuclideanDistance", "[", 
+                 RowBox[{
+                  RowBox[{"conPol", "[", 
+                   RowBox[{"[", "iDCH2", "]"}], "]"}], ",", 
+                  RowBox[{"conPol", "[", 
+                   RowBox[{"[", "jDCH2", "]"}], "]"}]}], "]"}]}], ";"}]}], 
+             "\[IndentingNewLine]", 
+             RowBox[{"(*", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"Print", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "index1", ",", "index2", ",", "start", ",", "end", ",", 
+                  "lDCH2", ",", "jDCH2", ",", "conPol", ",", "size"}], "}"}], 
+                "]"}], ";"}], "\[IndentingNewLine]", "*)"}], 
+             "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}], 
+          ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"start", "=", "end"}], ";", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", 
+          RowBox[{"jDCH2", "++"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";",
+        "\[IndentingNewLine]", 
+       RowBox[{"Return", "[", 
+        RowBox[{"{", 
+         RowBox[{"dDCH2", ",", "index1", ",", "index2"}], "}"}], "]"}], 
+       ";"}]}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", "MAIN", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:041a\:043e\:043b\:0438\:0447\:0435\:0442\:0432\:043e", " ", 
+     "\:0442\:043e\:0447\:0435\:043a"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n", " ", "=", " ", 
+     RowBox[{"RandomChoice", "[", 
+      RowBox[{"Range", "[", 
+       RowBox[{"6", ",", "7"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"n", "=", "6"}], ";"}], "\[IndentingNewLine]", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:041c\:0430\:0441\:0441\:0438\:0432", " ", 
+     "\:0442\:043e\:0447\:0435\:043a"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"arrPoints", " ", "=", " ", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"k", "=", "1"}], ",", " ", 
+     RowBox[{"k", "\[LessEqual]", "n"}], ",", " ", 
+     RowBox[{"k", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"point", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"RandomChoice", "[", 
+          RowBox[{"Range", "[", 
+           RowBox[{"15", ",", "25"}], "]"}], "]"}], ",", 
+         RowBox[{"RandomChoice", "[", 
+          RowBox[{"Range", "[", 
+           RowBox[{"15", ",", "25"}], "]"}], "]"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"arrPoints", ",", " ", "point"}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"arrPoints", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", "1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "0.5"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0.5", ",", 
+          RowBox[{"-", "0.5"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.7"}], ",", 
+          RowBox[{"-", "0.8"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "0.3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "0.8"}], ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+    "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0411\:0430\:0437\:043e\:0432\:0430\:044f", " ", 
+     "\:0441\:043a\:043e\:0440\:043e\:0441\:0442\:044c", " ", 
+     "\:0434\:0432\:0438\:0436\:0435\:043d\:0438\:044f", " ", 
+     "\:0442\:043e\:0447\:0435\:043a"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"v", "=", "1.2"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0412\:0435\:043a\:0442\:043e\:0440\:044b", " ", 
+     "\:0434\:0432\:0438\:0436\:0435\:043d\:0438\:044f", " ", 
+     "\:0442\:043e\:0447\:0435\:043a"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"V", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "\:0414\:0438\:0430\:043c\:0435\:0442\:0440", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"DD", "=", "30"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", " ", "=", "1"}], ",", " ", 
+     RowBox[{"i", "\[LessEqual]", "n"}], ",", " ", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"V", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"v", "*", 
+          RowBox[{"Cos", "[", 
+           RowBox[{"RandomReal", "[", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", 
+              RowBox[{"2", "\[Pi]"}]}], "}"}], "]"}], "]"}]}], ",", 
+         RowBox[{"v", "*", 
+          RowBox[{"Sin", "[", 
+           RowBox[{"RandomReal", "[", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", 
+              RowBox[{"2", "\[Pi]"}]}], "}"}], "]"}], "]"}]}]}], "}"}]}], 
+      "]"}]}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"V", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1", ",", "2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"2", ",", "1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1.5", ",", 
+          RowBox[{"-", "1.5"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1.2"}], ",", 
+          RowBox[{"-", "1"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1.1"}], ",", "1.3"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "2"}], "}"}]}], "}"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"V", "*=", "0.5"}], ";"}], "\[IndentingNewLine]", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0427\:0438\:0441\:043b\:043e", " ", 
+     "\:043a\:0430\:0434\:0440\:043e\:0432"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"numOfShots", " ", "=", " ", "20"}], ";"}], "\[IndentingNewLine]",
+    "\[IndentingNewLine]", 
+   RowBox[{"GR1", ":=", 
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "\:041d\:0430\:0441\:0442\:0440\:043e\:0439\:043a\:0438", " ", 
+         "\:0442\:043e\:0447\:0435\:043a"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"(*", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"PointSize", "[", "0.015", "]"}], ",", "Thick", ",", "Black",
+          ",", "\[IndentingNewLine]", 
+         RowBox[{"Table", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               SubscriptBox["\"\<i\>\"", "k"], ",", "Purple"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"arrPoints", "[", 
+                  RowBox[{"[", "k", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "+", "1"}], ",", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"arrPoints", "[", 
+                  RowBox[{"[", "k", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], "+", "1"}]}], "}"}]}], "]"}],
+            ",", 
+           RowBox[{"{", 
+            RowBox[{"k", ",", "1", ",", 
+             RowBox[{"Length", "[", "arrPoints", "]"}]}], "}"}]}], 
+          "\[IndentingNewLine]", "]"}], ","}], "\[IndentingNewLine]", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"PlotLabel", "\[Rule]", "info"}], ","}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", "\:0422\:043e\:0447\:043a\:0438", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Point", "[", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"arrPoints", "[", 
+             RowBox[{"[", "k", "]"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"k", ",", "1", ",", 
+              RowBox[{"Length", "[", "arrPoints", "]"}]}], "}"}]}], "]"}], 
+          "]"}], ","}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "100"}], ",", "100"}], "}"}], ",", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "100"}], ",", "100"}], "}"}]}], "}"}]}], ",", 
+      RowBox[{"Frame", "\[Rule]", "True"}]}], "\[IndentingNewLine]", "]"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:041c\:0430\:043a\:0435\:0442", " ", "\:0442\:043e\:0447\:043a\:0438"}],
+     "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    SubscriptBox["GRP", "i_"], ":=", 
+    RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"PointSize", "[", "0.015", "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"0.1", ",", "0.46", ",", "0.7"}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Point", "[", 
+         RowBox[{"arrPoints", "[", 
+          RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"i", ",", 
+            RowBox[{"RGBColor", "[", 
+             RowBox[{"0.1", ",", "0.46", ",", "0.7"}], "]"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"arrPoints", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "+", "3.5"}], ",", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"arrPoints", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "+", "3.5"}]}], "}"}]}], 
+         "]"}]}], "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "100"}], ",", "100"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "100"}], ",", "100"}], "}"}]}], "}"}]}]}], 
+     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    SubscriptBox["GRS", "i_"], ":=", 
+    RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{"Text", "[", 
+        RowBox[{"i", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "90"}], ",", 
+           RowBox[{"-", "90"}]}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"PlotRange", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "100"}], ",", "100"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "100"}], ",", "100"}], "}"}]}], "}"}]}]}], 
+     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:041a\:043e\:043d\:0441\:0442\:0430\:043d\:0442\:0430", " ", "D"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:041f\:043e\:043a\:0430\:0434\:0440\:043e\:0432\:044b\:0439", " ", 
+     "\:0440\:0430\:0441\:0447\:0435\:0442"}], "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"l", "=", "1"}], ",", 
+      RowBox[{"l", "\[LessEqual]", "numOfShots"}], ",", 
+      RowBox[{"l", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", "=", "1"}], ",", 
+         RowBox[{"i", "\[LessEqual]", 
+          RowBox[{"Length", "[", "arrPoints", "]"}]}], ",", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"arrPoints", "[", 
+            RowBox[{"[", "i", "]"}], "]"}], "=", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"arrPoints", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}], "+", 
+              RowBox[{
+               RowBox[{"V", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "[", 
+               RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"arrPoints", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "[", 
+               RowBox[{"[", "2", "]"}], "]"}], "+", 
+              RowBox[{
+               RowBox[{"V", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "[", 
+               RowBox[{"[", "2", "]"}], "]"}]}]}], "}"}]}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"convexPolIndexes", "=", 
+           RowBox[{"Jarvis", "[", "arrPoints", "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"convexPol", "=", 
+           RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"iConvex", "=", "1"}], ",", 
+            RowBox[{"iConvex", "\[LessEqual]", 
+             RowBox[{"Length", "[", "convexPolIndexes", "]"}]}], ",", 
+            RowBox[{"iConvex", "++"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"convexPol", ",", 
+              RowBox[{"arrPoints", "[", 
+               RowBox[{"[", 
+                RowBox[{"convexPolIndexes", "[", 
+                 RowBox[{"[", "iConvex", "]"}], "]"}], "]"}], "]"}]}], 
+             "]"}]}], "\[IndentingNewLine]", "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"diameterArr", "=", 
+           RowBox[{"diameterCH2", "[", "convexPol", "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"(*", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Print", "[", 
+             RowBox[{"{", 
+              RowBox[{"l", ",", "diameterArr"}], "}"}], "]"}], ";"}], 
+           "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"V", "[", 
+            RowBox[{"[", 
+             RowBox[{"diameterArr", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}], "*=", 
+           RowBox[{"-", "1"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"V", "[", 
+            RowBox[{"[", 
+             RowBox[{"diameterArr", "[", 
+              RowBox[{"[", "3", "]"}], "]"}], "]"}], "]"}], "*=", 
+           RowBox[{"-", "1"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"arrPoints", "[", 
+            RowBox[{"[", 
+             RowBox[{"diameterArr", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}], "+=", 
+           RowBox[{"V", "[", 
+            RowBox[{"[", 
+             RowBox[{"diameterArr", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"arrPoints", "[", 
+            RowBox[{"[", 
+             RowBox[{"diameterArr", "[", 
+              RowBox[{"[", "3", "]"}], "]"}], "]"}], "]"}], "+=", 
+           RowBox[{"V", "[", 
+            RowBox[{"[", 
+             RowBox[{"diameterArr", "[", 
+              RowBox[{"[", "3", "]"}], "]"}], "]"}], "]"}]}], ";", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"diameterArr", "[", 
+              RowBox[{"[", "1", "]"}], "]"}], "\[GreaterEqual]", "DD"}], ",", 
+            RowBox[{"i", "--"}]}], "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"l", "\[Equal]", "49"}], ",", 
+            RowBox[{"Break", "[", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+          "\[IndentingNewLine]", 
+          RowBox[{"(*", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"diameterArr", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "\[GreaterEqual]", "DD"}], 
+              ",", "\[IndentingNewLine]", 
+              RowBox[{"(*", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Print", "[", "diameterArr", "]"}], ";"}], 
+               "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+              RowBox[{"(*", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"Print", "[", 
+                 RowBox[{"{", 
+                  RowBox[{"l", ",", "i", ",", "diameterArr"}], "}"}], "]"}], 
+                ";"}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+              "\[IndentingNewLine]", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"arrPoints", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"diameterArr", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}], "+=", 
+                RowBox[{"V", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"diameterArr", "[", 
+                   RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"arrPoints", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"diameterArr", "[", 
+                   RowBox[{"[", "3", "]"}], "]"}], "]"}], "]"}], "+=", 
+                RowBox[{"V", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"diameterArr", "[", 
+                   RowBox[{"[", "3", "]"}], "]"}], "]"}], "]"}]}], ";"}]}], 
+             "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{"(*", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"convexPolIndexes", "=", 
+                RowBox[{"Jarvis", "[", "arrPoints", "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"convexPol", "=", 
+                RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+               RowBox[{"For", "[", 
+                RowBox[{
+                 RowBox[{"iConvex2", "=", "1"}], ",", 
+                 RowBox[{"iConvex2", "\[LessEqual]", 
+                  RowBox[{"Length", "[", "convexPolIndexes", "]"}]}], ",", 
+                 RowBox[{"iConvex2", "++"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{"AppendTo", "[", 
+                  RowBox[{"convexPol", ",", 
+                   RowBox[{"arrPoints", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"convexPolIndexes", "[", 
+                    RowBox[{"[", "iConvex2", "]"}], "]"}], "]"}], "]"}]}], 
+                  "]"}]}], "\[IndentingNewLine]", "]"}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"diameterArr", "=", 
+                RowBox[{"diameterCH", "[", "convexPol", "]"}]}], ";"}], 
+              "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+             RowBox[{"(*", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"V", "*=", 
+                RowBox[{"-", "1"}]}], ";", "\[IndentingNewLine]", 
+               RowBox[{"arrPoints", "+=", "V"}], ";"}], "\[IndentingNewLine]",
+               "*)"}], "\[IndentingNewLine]", 
+             RowBox[{"(*", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"convexPolIndexes", "=", 
+                RowBox[{"Jarvis", "[", "arrPoints", "]"}]}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"convexPol", "=", 
+                RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+               RowBox[{"For", "[", 
+                RowBox[{
+                 RowBox[{"iConvex2", "=", "1"}], ",", 
+                 RowBox[{"iConvex2", "\[LessEqual]", 
+                  RowBox[{"Length", "[", "convexPolIndexes", "]"}]}], ",", 
+                 RowBox[{"iConvex2", "++"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{"AppendTo", "[", 
+                  RowBox[{"convexPol", ",", 
+                   RowBox[{"arrPoints", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"convexPolIndexes", "[", 
+                    RowBox[{"[", "iConvex2", "]"}], "]"}], "]"}], "]"}]}], 
+                  "]"}]}], "\[IndentingNewLine]", "]"}], ";", 
+               "\[IndentingNewLine]", 
+               RowBox[{"diameterArr", "=", 
+                RowBox[{"diameterCH", "[", "convexPol", "]"}]}], ";"}], 
+              "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+             RowBox[{"(*", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"Print", "[", "diameterArr", "]"}], ";"}], 
+              "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+             RowBox[{"(*", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"Print", "[", "V", "]"}], ";"}], "\[IndentingNewLine]",
+               "*)"}], "\[IndentingNewLine]", "]"}], ";"}], 
+           "\[IndentingNewLine]", "\[IndentingNewLine]", "*)"}], 
+          "\[IndentingNewLine]", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"i", "\[Equal]", "1"}], ",", 
+            RowBox[{
+             SubscriptBox["GR2", "l"], "=", 
+             RowBox[{"{", 
+              SubscriptBox["GRP", "i"], "}"}]}], ",", 
+            RowBox[{
+             SubscriptBox["GR2", "l"], "=", 
+             RowBox[{"Union", "[", 
+              RowBox[{
+               SubscriptBox["GR2", "l"], ",", 
+               RowBox[{"{", 
+                SubscriptBox["GRP", "i"], "}"}]}], "]"}]}]}], "]"}]}]}], 
+        "\[IndentingNewLine]", "]"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", "convexPol", "]"}], "\[IndentingNewLine]", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"ListAnimate", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Show", "[", 
+       RowBox[{"GR1", ",", 
+        SubscriptBox["GR2", "i"], ",", 
+        SubscriptBox["GRS", "i"]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "numOfShots"}], "}"}]}], "]"}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.858657579928877*^9, 3.8586577219279613`*^9}, {
+   3.8586577560206423`*^9, 3.8586577755915756`*^9}, {3.8586578062771316`*^9, 
+   3.8586578066031327`*^9}, 3.8586578469252367`*^9, {3.8586579688627715`*^9, 
+   3.8586579768818808`*^9}, 3.8586580091302767`*^9, {3.85865806918303*^9, 
+   3.858658220699898*^9}, {3.858658253872938*^9, 3.858658291096568*^9}, {
+   3.8586584297009754`*^9, 3.858658435348445*^9}, {3.858658481097529*^9, 
+   3.858658583630701*^9}, {3.85865875929683*^9, 3.8586588212678604`*^9}, {
+   3.858658872817175*^9, 3.8586589010890684`*^9}, {3.858658970107128*^9, 
+   3.858659078044253*^9}, {3.8586591981266165`*^9, 3.8586592639666314`*^9}, 
+   3.858659419287361*^9, {3.8586594654687243`*^9, 3.858659483561586*^9}, {
+   3.8586595441351767`*^9, 3.8586595443950877`*^9}, {3.858660320923684*^9, 
+   3.8586603713815727`*^9}, {3.8586604169923997`*^9, 
+   3.8586605141272697`*^9}, {3.8586605485319347`*^9, 3.858660586107458*^9}, {
+   3.8586606414570656`*^9, 3.8586606431707516`*^9}, {3.8586624705277443`*^9, 
+   3.858662551379228*^9}, {3.858665100853739*^9, 3.8586651104417706`*^9}, {
+   3.858665144965184*^9, 3.858665168196351*^9}, {3.858669383797167*^9, 
+   3.8586693841840897`*^9}, {3.858669454399102*^9, 3.858669480846772*^9}, {
+   3.8586695377506247`*^9, 3.8586697707106514`*^9}, {3.858669965638301*^9, 
+   3.8586699960312214`*^9}, {3.858670063926609*^9, 3.8586701694951353`*^9}, {
+   3.858670238438722*^9, 3.8586702502723246`*^9}, {3.858670328785343*^9, 
+   3.8586703369429913`*^9}, {3.8586703795528755`*^9, 3.858670412152333*^9}, {
+   3.858670590448245*^9, 3.858670590713807*^9}, {3.858671505174214*^9, 
+   3.858671609391424*^9}, {3.8586716555459347`*^9, 3.858671658910618*^9}, {
+   3.85867172483665*^9, 3.85867173042462*^9}, {3.8586717978375325`*^9, 
+   3.85867179890457*^9}, {3.8586719785388613`*^9, 3.8586720050374875`*^9}, {
+   3.858672288113496*^9, 3.85867236741636*^9}, {3.858672406170041*^9, 
+   3.8586725103996334`*^9}, {3.8586725744450607`*^9, 3.8586725748309107`*^9}, 
+   3.8586889363880367`*^9, {3.8586890622666283`*^9, 3.858689121668959*^9}, {
+   3.8586892438715663`*^9, 3.858689488897278*^9}, {3.858689527372977*^9, 
+   3.8586895698677416`*^9}, {3.858689643694281*^9, 3.8586896541332226`*^9}, {
+   3.8586897355678325`*^9, 3.8586899153444767`*^9}, {3.8586900354611635`*^9, 
+   3.858690038989173*^9}, {3.858690123147106*^9, 3.8586901484833827`*^9}, {
+   3.8586901846455846`*^9, 3.8586902001327267`*^9}, {3.8586902399633427`*^9, 
+   3.8586902596295023`*^9}, {3.858690561406324*^9, 3.858690724836237*^9}, {
+   3.858690767652007*^9, 3.85869076896039*^9}, {3.8586909248606715`*^9, 
+   3.8586911011163244`*^9}, {3.858691162068803*^9, 3.8586911789802437`*^9}, 
+   3.8586912852549753`*^9, {3.858691348112475*^9, 3.858691391909766*^9}, {
+   3.8586914289316745`*^9, 3.8586916741628065`*^9}, {3.8586929570164046`*^9, 
+   3.8586929616049433`*^9}, {3.858693030831706*^9, 3.858693032533829*^9}, {
+   3.8586930897769804`*^9, 3.8586931174598503`*^9}, {3.858693173799125*^9, 
+   3.858693270708645*^9}, {3.8586935834767184`*^9, 3.8586935837527823`*^9}, {
+   3.858693933377552*^9, 3.858693933938769*^9}, {3.858696380802102*^9, 
+   3.858696533817821*^9}, {3.8592645454937706`*^9, 3.859264545766889*^9}, {
+   3.8592647798868666`*^9, 3.8592647818131623`*^9}, {3.8601376274440017`*^9, 
+   3.860137627629681*^9}, {3.8601397311948123`*^9, 3.8601397363385525`*^9}, 
+   3.8601397674907184`*^9, {3.860140219251972*^9, 3.8601402301881227`*^9}, {
+   3.860141273000252*^9, 3.8601412806875696`*^9}, {3.8601421392696066`*^9, 
+   3.8601421448667088`*^9}, 3.8601424625302787`*^9, {3.860143081379998*^9, 
+   3.8601430901108804`*^9}, {3.860143125300533*^9, 3.8601432390452414`*^9}, {
+   3.8601435033550663`*^9, 3.860143531667938*^9}, {3.860143914246783*^9, 
+   3.860143918893583*^9}, 3.8601460321425896`*^9, {3.860146158353939*^9, 
+   3.860146179412212*^9}, {3.8601462232912498`*^9, 3.86014631477335*^9}, {
+   3.8601463946382885`*^9, 3.860146396649663*^9}, {3.860146489714572*^9, 
+   3.860146519031526*^9}, {3.8601465942271233`*^9, 3.860146700890607*^9}, 
+   3.860146778412792*^9, {3.8601468314389553`*^9, 3.8601468317429047`*^9}, {
+   3.860146867267797*^9, 3.860146917914553*^9}, {3.8601469915618773`*^9, 
+   3.860146994788821*^9}, {3.860147129318613*^9, 3.860147150389946*^9}, {
+   3.860147195815205*^9, 3.860147219499824*^9}, {3.860147266344124*^9, 
+   3.8601473141689177`*^9}, {3.8601475840814123`*^9, 
+   3.8601476792980003`*^9}, {3.860147735379135*^9, 3.860147783777912*^9}, {
+   3.860147824629614*^9, 3.8601478616369977`*^9}, {3.8601479155012565`*^9, 
+   3.860147978144212*^9}, {3.860148029188075*^9, 3.8601480299246716`*^9}, {
+   3.860148210409881*^9, 3.86014821112401*^9}, {3.860148269549061*^9, 
+   3.8601482786996393`*^9}, {3.860148454388381*^9, 3.860148479229907*^9}, {
+   3.860148753321717*^9, 3.8601487575504503`*^9}, {3.8601488235769615`*^9, 
+   3.86014882701861*^9}, {3.8601489536969886`*^9, 3.8601490603050966`*^9}, {
+   3.860149105097539*^9, 3.8601491390507126`*^9}, {3.8601492001222696`*^9, 
+   3.860149220742135*^9}, {3.860149252425387*^9, 3.860149302537676*^9}, {
+   3.86014935081761*^9, 3.8601493826501627`*^9}, {3.8601495082697306`*^9, 
+   3.860149621149748*^9}, {3.860149711949485*^9, 3.8601497402882857`*^9}, {
+   3.860149788599452*^9, 3.8601498417548523`*^9}, {3.86014987252693*^9, 
+   3.8601498840184965`*^9}, 3.8601500118188596`*^9, {3.860150660470544*^9, 
+   3.860150767783867*^9}, {3.860151253331205*^9, 3.860151337952011*^9}, {
+   3.860728687553974*^9, 3.8607287093941565`*^9}, {3.8607287445044456`*^9, 
+   3.8607288018890285`*^9}, {3.860728833701682*^9, 3.86072884657574*^9}, 
+   3.860728889795788*^9, {3.860729241177635*^9, 3.860729372365353*^9}, 
+   3.8607295291462827`*^9, {3.8607295732069683`*^9, 3.8607295955892525`*^9}, {
+   3.8607296588761578`*^9, 3.860729673317705*^9}, {3.8607297582511806`*^9, 
+   3.860729765357348*^9}, 3.8607298231644464`*^9, {3.8607304210958023`*^9, 
+   3.8607304468210416`*^9}, {3.8607305019572134`*^9, 3.86073050496609*^9}, {
+   3.8607309082499905`*^9, 3.860730948599439*^9}, {3.860731066743506*^9, 
+   3.8607310676657424`*^9}, {3.860731158504345*^9, 3.8607311692339487`*^9}, {
+   3.860731241258518*^9, 3.8607312608413515`*^9}, {3.8607312918783007`*^9, 
+   3.860731465595642*^9}, {3.8607315489105263`*^9, 3.860731597536105*^9}, {
+   3.8607316352081933`*^9, 3.860731639841317*^9}, {3.8607316823677464`*^9, 
+   3.8607316836067286`*^9}, {3.8607318003356314`*^9, 
+   3.8607318628410277`*^9}, {3.860731999350404*^9, 3.8607320724165373`*^9}, {
+   3.8607321239717426`*^9, 3.860732254463492*^9}, 3.860732697614901*^9, {
+   3.8607327364872084`*^9, 3.8607327562112412`*^9}, {3.860732986175541*^9, 
+   3.8607330480102587`*^9}, {3.8607376593750343`*^9, 
+   3.8607376638022056`*^9}, {3.860737719255195*^9, 3.8607377251245584`*^9}, {
+   3.8607377645700626`*^9, 3.8607377652240696`*^9}, {3.8607378657781076`*^9, 
+   3.8607378762475967`*^9}, {3.860738160157232*^9, 3.86073816169615*^9}, {
+   3.8607382109780564`*^9, 3.86073823957605*^9}, 3.8607385537324476`*^9, {
+   3.8607706219812903`*^9, 3.8607706319556503`*^9}, {3.8607706632426505`*^9, 
+   3.860770725027073*^9}, {3.8607707696379805`*^9, 3.860770792514433*^9}, {
+   3.8607710543979483`*^9, 3.860771092345424*^9}, {3.860771167976703*^9, 
+   3.860771177090032*^9}, {3.860771280265482*^9, 3.8607713345560284`*^9}, {
+   3.8607713805411386`*^9, 3.8607713831208687`*^9}, {3.860771427766265*^9, 
+   3.8607714286324024`*^9}, {3.860771494851142*^9, 3.860771516971064*^9}, {
+   3.8607715802531443`*^9, 3.8607715850755796`*^9}, {3.86077166780081*^9, 
+   3.860771668993814*^9}, {3.860771753751116*^9, 3.860771761049447*^9}, {
+   3.8607718409412766`*^9, 3.8607718441769657`*^9}, {3.860772977783253*^9, 
+   3.8607730086938534`*^9}, {3.8607730399353166`*^9, 3.860773100862397*^9}, {
+   3.8608499706384606`*^9, 3.8608500921643305`*^9}, {3.8608501547925673`*^9, 
+   3.8608501567341747`*^9}, {3.860850745625321*^9, 3.8608507800774403`*^9}, {
+   3.860850942111051*^9, 3.860850942967029*^9}, {3.860851022406584*^9, 
+   3.8608510481266203`*^9}, {3.8608510868303127`*^9, 
+   3.8608510914716187`*^9}, {3.8608511753831406`*^9, 3.86085117997348*^9}, {
+   3.8608512520301094`*^9, 3.860851339282752*^9}, {3.860851434680011*^9, 
+   3.860851442630211*^9}, {3.8608514789350796`*^9, 3.8608514885662117`*^9}, {
+   3.8608535400425034`*^9, 3.860853554888706*^9}, {3.8608536270832205`*^9, 
+   3.8608536559671526`*^9}, {3.8608539940491695`*^9, 3.8608539959468336`*^9}, 
+   3.860854144458039*^9, {3.860854186961089*^9, 3.860854192425288*^9}, {
+   3.8608542652106524`*^9, 3.8608542743727055`*^9}, {3.8608549628025093`*^9, 
+   3.8608549645173683`*^9}, {3.8608567436431336`*^9, 
+   3.8608567576287003`*^9}, {3.8608568754528246`*^9, 
+   3.8608568861613417`*^9}, {3.8608569227554684`*^9, 3.860856974282823*^9}, {
+   3.8608570197775526`*^9, 3.860857043620768*^9}, {3.860857102660662*^9, 
+   3.8608571116555705`*^9}, {3.860857291189332*^9, 3.860857298900038*^9}, {
+   3.8608967736662097`*^9, 3.86089680133685*^9}, {3.8608971717349043`*^9, 
+   3.860897483882738*^9}, {3.8608976434019003`*^9, 3.8608976861552496`*^9}, {
+   3.8608977219273005`*^9, 3.8608977660870714`*^9}, {3.8608978675014753`*^9, 
+   3.860897870953117*^9}, {3.860898027266347*^9, 3.860898031324335*^9}, {
+   3.8608980697902455`*^9, 3.8608981039519987`*^9}, {3.8608987076812897`*^9, 
+   3.8608987281271377`*^9}, {3.860898769802678*^9, 3.860898851275735*^9}, {
+   3.8608989009766674`*^9, 3.86089906959661*^9}, {3.86089918633072*^9, 
+   3.860899413356488*^9}, {3.8608994480820885`*^9, 3.860899504985533*^9}, {
+   3.8608995925520077`*^9, 3.8608996439049444`*^9}, {3.861453837711459*^9, 
+   3.8614538783651323`*^9}, {3.861454782511292*^9, 3.8614547920224257`*^9}, {
+   3.8614551781102333`*^9, 3.8614551813762817`*^9}, {3.8614555634214354`*^9, 
+   3.86145574130177*^9}, {3.861455783190364*^9, 3.861455792595231*^9}, {
+   3.861456018884213*^9, 3.861456039279996*^9}, {3.8614566117934866`*^9, 
+   3.861456646840102*^9}, {3.861457193951709*^9, 3.8614572165199738`*^9}, {
+   3.8614575985039625`*^9, 3.861457614178049*^9}, {3.861458313609555*^9, 
+   3.8614583422658796`*^9}, {3.8614583759295983`*^9, 
+   3.8614583969630785`*^9}, {3.861458469518744*^9, 3.861458475384907*^9}, {
+   3.8614598892531643`*^9, 3.8614598922324953`*^9}, {3.8614599361249514`*^9, 
+   3.861459959560962*^9}, {3.861460633341593*^9, 3.861460647395574*^9}, {
+   3.86146084403891*^9, 3.8614608445580273`*^9}, 3.861460914144758*^9, {
+   3.8614610567909718`*^9, 3.8614610610213385`*^9}, {3.861461727980049*^9, 
+   3.8614617325118694`*^9}, {3.8614621648498087`*^9, 3.861462185919512*^9}, {
+   3.861462232598856*^9, 3.8614622602309165`*^9}, {3.8614623031349974`*^9, 
+   3.861462330337188*^9}, {3.8614626556817513`*^9, 3.8614627221441107`*^9}, 
+   3.8614627798432136`*^9, {3.861462850722929*^9, 3.8614628618501253`*^9}, {
+   3.8614632096661005`*^9, 3.8614632214406157`*^9}, {3.8614633018479214`*^9, 
+   3.861463329175876*^9}, {3.8614634241675415`*^9, 3.861463431072209*^9}, {
+   3.861463754784092*^9, 3.8614637577685857`*^9}, 3.8614648116641006`*^9, {
+   3.8614651854083633`*^9, 3.8614652216146855`*^9}, {3.861465399678625*^9, 
+   3.8614654116788445`*^9}, {3.861465504351042*^9, 3.861465506941897*^9}, {
+   3.861465633801921*^9, 3.861465722168414*^9}, {3.8614659488431625`*^9, 
+   3.861465972406867*^9}, 3.861466010814926*^9, {3.861466052567262*^9, 
+   3.8614661105103197`*^9}, 3.8614661721835947`*^9, {3.8614662833819513`*^9, 
+   3.861466306279765*^9}, {3.861466347291381*^9, 3.8614663516343365`*^9}, {
+   3.8614663846762342`*^9, 3.8614663920703087`*^9}, {3.861466618630189*^9, 
+   3.8614666290568953`*^9}, {3.86146682275421*^9, 3.861466858126543*^9}, {
+   3.8614669103682494`*^9, 3.8614669838144617`*^9}, {3.8614670708479214`*^9, 
+   3.861467075079651*^9}, {3.861467123122425*^9, 3.861467131621964*^9}, {
+   3.8614671907502737`*^9, 3.861467198316887*^9}, {3.8614672379355335`*^9, 
+   3.861467239992203*^9}, {3.8614673286867037`*^9, 3.861467360759736*^9}, {
+   3.8614674848365498`*^9, 3.861467511672264*^9}, {3.861467594536344*^9, 
+   3.861467603475177*^9}, {3.861467662095559*^9, 3.861467665565242*^9}, 
+   3.861467726834038*^9, {3.861467860198104*^9, 3.8614679297165155`*^9}, 
+   3.861467974880134*^9, 3.8614681417848077`*^9, 3.861468241406993*^9, {
+   3.8614685447709913`*^9, 3.8614685500034723`*^9}, {3.861469102044013*^9, 
+   3.8614691159278836`*^9}, {3.8614699958656435`*^9, 
+   3.8614700350095825`*^9}, {3.8614701267347107`*^9, 3.861470167273473*^9}, 
+   3.861470232053547*^9, {3.8614702762813115`*^9, 3.8614703187773275`*^9}, {
+   3.8614704065112257`*^9, 3.861470406812931*^9}, {3.8614937402703032`*^9, 
+   3.861493740937852*^9}, {3.8614938308469377`*^9, 3.861493830956319*^9}, {
+   3.861493896763315*^9, 3.861493918180144*^9}, {3.8614940134795465`*^9, 
+   3.861494035235484*^9}, {3.8614941757426047`*^9, 3.861494175820714*^9}, 
+   3.8615015665204926`*^9}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{
+  3.860728860276207*^9, 3.860728898227006*^9, 3.860729706277134*^9, 
+   3.8607304580043015`*^9, 3.860730511653304*^9, 3.86073099092201*^9, 
+   3.860731199896284*^9, 3.8607312710535145`*^9, 3.8607315284829645`*^9, 
+   3.8607316113288517`*^9, 3.860731723999222*^9, 3.8607319267782063`*^9, {
+   3.8607326893364487`*^9, 3.860732700737008*^9}, 3.860732759815732*^9, {
+   3.8607330262051516`*^9, 3.860733074400298*^9}, 3.8607376725696325`*^9, {
+   3.860737731711995*^9, 3.8607377742451344`*^9}, 3.8607381384285955`*^9, 
+   3.8607382647760725`*^9, 3.860770581061307*^9, 3.8607707332486153`*^9, 
+   3.86077080821908*^9, 3.8607710962306805`*^9, 3.8607711881189413`*^9, 
+   3.860771345174055*^9, 3.860771391915532*^9, 3.860771438173749*^9, 
+   3.8607715495986385`*^9, {3.860771650168271*^9, 3.860771674912881*^9}, 
+   3.860771769584564*^9, 3.8608501076183386`*^9, 3.8608506541181498`*^9, 
+   3.8608507596951876`*^9, 3.8608508368505936`*^9, 3.860850950993743*^9, {
+   3.860851027237914*^9, 3.8608510550476074`*^9}, 3.8608510952961583`*^9, 
+   3.860851184178735*^9, {3.8608512764526677`*^9, 3.860851323062067*^9}, 
+   3.860851447119728*^9, 3.860851494116356*^9, 3.8608535611974416`*^9, 
+   3.860853713810246*^9, 3.860854015043835*^9, 3.8608567810875835`*^9, 
+   3.8608568318096514`*^9, {3.860856889676473*^9, 3.860856980771121*^9}, {
+   3.8608570293377924`*^9, 3.8608570507747984`*^9}, 3.8608571217536373`*^9, {
+   3.860857304472085*^9, 3.860857327760284*^9}, 3.860896823078068*^9, 
+   3.860899662438682*^9, 3.861453589823169*^9, 3.861453895462914*^9, 
+   3.861454822208932*^9, 3.8614552087730155`*^9, 3.8614554120236764`*^9, {
+   3.861455699812705*^9, 3.8614557198806305`*^9}, 3.8614557524124804`*^9, 
+   3.8614558102937403`*^9, 3.861456126129346*^9, 3.861456724743355*^9, 
+   3.861457295538782*^9, 3.8614584159738255`*^9, 3.8614594368091717`*^9, 
+   3.8614599874589667`*^9, 3.86146056294617*^9, 3.861460766227012*^9, 
+   3.8614608168404703`*^9, 3.8614608727478495`*^9, 3.861461007585426*^9, 
+   3.861461087575817*^9, 3.8614617732218437`*^9, 3.8614628809757533`*^9, {
+   3.8614633100485163`*^9, 3.8614633362386065`*^9}, 3.8614636197037745`*^9, 
+   3.861463760347287*^9, {3.861464801426714*^9, 3.8614648335183697`*^9}, {
+   3.8614651668535776`*^9, 3.8614652249454145`*^9}, 3.8614655438773355`*^9, 
+   3.8614657278325253`*^9, 3.861465976134078*^9, 3.861466014325584*^9, {
+   3.8614660560853915`*^9, 3.8614660730863743`*^9}, 3.8614661227626476`*^9, 
+   3.861466186350173*^9, 3.8614663187324047`*^9, 3.8614664054839797`*^9, 
+   3.8614666413219485`*^9, 3.861467009213069*^9, 3.861467086505148*^9, 
+   3.8614671458283434`*^9, 3.861467209227483*^9, 3.861467252624216*^9, 
+   3.8614673851508074`*^9, 3.8614675679282265`*^9, 3.8614676478620443`*^9, {
+   3.8614677083899784`*^9, 3.861467730062212*^9}, 3.861467867150173*^9, 
+   3.861467940718686*^9, 3.8614679893203125`*^9, 3.861468154290192*^9, 
+   3.861468251970189*^9, 3.8614684957079983`*^9, {3.86146856226265*^9, 
+   3.8614685827183065`*^9}, 3.861469130912806*^9, 3.8614700556934824`*^9, 
+   3.861470132559635*^9, 3.8614701721370363`*^9, 3.861470251275603*^9, 
+   3.861470309886917*^9, 3.861470378600975*^9, 3.8614704093076124`*^9, {
+   3.861493835572241*^9, 3.8614938510509157`*^9}, 3.8614939634407215`*^9, 
+   3.861494070013322*^9, 3.8614941820876503`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i7$$ = 19, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {
+    "\"min\"" :> {$CellContext`i7$$ = 1}, 
+     "\"max\"" :> {$CellContext`i7$$ = 20}}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`i7$$], 1, ""}, 1, 20, 1}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`i7$3893$$ = 0}, 
+    PaneBox[
+     PanelBox[
+      DynamicWrapperBox[GridBox[{
+         {
+          ItemBox[
+           ItemBox[
+            TagBox[
+             StyleBox[GridBox[{
+                {"\<\"\"\>", 
+                 AnimatorBox[Dynamic[$CellContext`i7$$], {1, 20, 1},
+                  AnimationRate->Automatic,
+                  AnimationRunTime->4.60402250289917,
+                  AnimationRunning->False,
+                  AnimationTimeIndex->4.60402250289917,
+                  
+                  AppearanceElements->{
+                   "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons",
+                     "DirectionButton"},
+                  AutoAction->False,
+                  DisplayAllSteps->True]}
+               },
+               AutoDelete->False,
+               
+               GridBoxAlignment->{
+                "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "ListAnimateLabel",
+              StripOnInput->False],
+             {"ControlArea", Top}],
+            Alignment->{Automatic, Inherited},
+            StripOnInput->False],
+           Background->None,
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            StyleBox[
+             PaneBox[
+              TagBox[
+               PaneSelectorBox[{1->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{13.97569589098235, 23.780235451242604`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {17.47569589098235, 27.280235451242604}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{20.131508493569093`, 18.5731592034049}], InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {23.631508493569093, 22.0731592034049}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{22.725992637827204`, 18.176068201393427`}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {26.225992637827204, 21.676068201393427}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.03596625405556, 18.540469196476128`}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.53596625405556, 22.040469196476128}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.79929983309873, 26.197478975583174`}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {28.29929983309873, 29.697478975583174}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{25., 17.}], InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    FontColor->RGBColor[0.1, 0.46, 0.7]], {28.5, 20.5}]}, 
+                  InsetBox["1", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 2->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{12.951391781964698`, 23.560470902485207`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {16.4513917819647, 27.060470902485207}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{21.065754246784547`, 19.28657960170245}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {24.565754246784547, 22.78657960170245}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.071932508111118`, 19.080938392952255`}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.571932508111118, 22.580938392952255}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.177977913481612`, 18.52820460418028}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.677977913481612, 22.02820460418028}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.183935675458677`, 15.860884445429319`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.683935675458677, 19.36088444542932}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{25.598599666197458`, 27.394957951166347`}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {29.098599666197458, 30.894957951166347}]}, 
+                  InsetBox["2", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 3->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{11.927087672947048`, 23.34070635372781}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {15.427087672947048, 26.84070635372781}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{22., 20.}], InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    FontColor->RGBColor[0.1, 0.46, 0.7]], {25.5, 23.5}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{23.367871350917355`, 14.721768890858637`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {26.867871350917355, 18.221768890858637}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.107898762166677`, 19.621407589428383`}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.607898762166677, 23.121407589428383}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.903970551308817`, 18.70427280557371}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {28.403970551308817, 22.20427280557371}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{26.397899499296187`, 28.59243692674952}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {29.897899499296187, 32.09243692674952}]}, 
+                  InsetBox["3", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 4->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{11.927087672947048`, 23.34070635372781}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {15.427087672947048, 26.84070635372781}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{22.551807026376032`, 13.582653336287956`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {26.051807026376032, 17.082653336287954}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{23.868491506430907`, 21.4268407965951}], InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.368491506430907, 24.9268407965951}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.143865016222236`, 20.16187678590451}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.643865016222236, 23.66187678590451}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{25.62996318913602, 18.880341006967136`}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {29.12996318913602, 22.380341006967136}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{27.197199332394916`, 29.789915902332694`}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {30.697199332394916, 33.289915902332694}]}, 
+                  InsetBox["4", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 5->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{10.902783563929397`, 23.120941804970414`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {14.402783563929397, 26.620941804970414}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{21.73574270183471, 12.443537781717275`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {25.23574270183471, 15.943537781717275}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.179831270277795`, 20.70234598238064}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.679831270277795, 24.20234598238064}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.80273725964636, 22.140261194892652`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {28.30273725964636, 25.640261194892652}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{26.355955826963225`, 19.056409208360563`}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {29.855955826963225, 22.556409208360563}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{27.996499165493645`, 30.987394877915868`}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {31.496499165493645, 34.48739487791587}]}, 
+                  InsetBox["5", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 6->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{9.878479454911746, 22.901177256213018`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {13.378479454911746, 26.401177256213018}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{20.919678377293387`, 11.304422227146594`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {24.419678377293387, 14.804422227146594}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.215797524333354`, 21.242815178856766`}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.715797524333354, 24.742815178856766}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{25.736983012861813`, 22.853681593190203`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {29.236983012861813, 26.353681593190203}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{27.08194846479043, 19.23247740975399}], InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {30.58194846479043, 22.73247740975399}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{28.795798998592375`, 32.18487385349904}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {32.295798998592375, 35.68487385349904}]}, 
+                  InsetBox["6", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 7->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{8.854175345894095, 22.68141270745562}], InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {12.354175345894095, 26.18141270745562}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{20.103614052752064`, 10.165306672575912`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {23.603614052752064, 13.665306672575912}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.251763778388913`, 21.783284375332894`}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.751763778388913, 25.283284375332894}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{26.671228766077267`, 23.567101991487753`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {30.171228766077267, 27.067101991487753}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{27.807941102617633`, 19.408545611147417`}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {31.307941102617633, 22.908545611147417}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{29.595098831691104`, 33.382352829082215`}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {33.095098831691104, 36.882352829082215}]}, 
+                  InsetBox["7", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 8->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{7.8298712368764445`, 22.461648158698225`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {11.329871236876444, 25.961648158698225}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{19.28754972821074, 9.026191118005231}], InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {22.78754972821074, 12.526191118005231}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.287730032444472`, 22.32375357180902}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.787730032444472, 25.82375357180902}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{27.60547451929272, 24.280522389785304`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {31.10547451929272, 27.780522389785304}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{28.533933740444837`, 19.584613812540844`}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {32.03393374044484, 23.084613812540844}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{30.394398664789833`, 34.57983180466539}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {33.89439866478983, 38.07983180466539}]}, 
+                  InsetBox["8", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 9->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{6.805567127858794, 22.241883609940828`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {10.305567127858794, 25.741883609940828}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{18.47148540366942, 7.88707556343455}], InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {21.97148540366942, 11.38707556343455}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.32369628650003, 22.86422276828515}], InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.82369628650003, 26.36422276828515}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{28.539720272508173`, 24.993942788082855`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {32.03972027250818, 28.493942788082855}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{29.25992637827204, 19.76068201393427}], InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {32.75992637827204, 23.26068201393427}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{31.193698497888562`, 35.77731078024856}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {34.69369849788856, 39.27731078024856}]}, 
+                  InsetBox["9", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 10->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{5.781263018841143, 22.02211906118343}], InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {9.281263018841143, 25.52211906118343}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{17.655421079128097`, 6.747960008863869}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {21.155421079128097, 10.247960008863869}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.35966254055559, 23.404691964761277`}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.85966254055559, 26.904691964761277}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{29.473966025723627`, 25.707363186380405`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {32.97396602572363, 29.207363186380405}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{29.985919016099245`, 19.9367502153277}], InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {33.485919016099245, 23.4367502153277}]}, 
+                  InsetBox["10", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 11->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{15.960714065314555`, 21.098629034735207`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {19.460714065314555, 24.598629034735207}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.41939633676206, 19.851973444843264`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.91939633676206, 23.351973444843264}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.48579973696373, 22.27283975117128}], InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.98579973696373, 25.77283975117128}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{25.74292900484314, 10.286592787466034`}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {29.24292900484314, 13.786592787466034}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{27.34571621179664, 24.50842599637258}], InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    FontColor->RGBColor[0.1, 0.46, 0.7]], 
+                    {30.84571621179664, 28.00842599637258}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{29.594224519234444`, 32.88121323416922}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {33.094224519234444, 36.38121323416922}]}, 
+                  InsetBox["11", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 12->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{17., 20.}], InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    FontColor->RGBColor[0.1, 0.46, 0.7]], {20.5, 23.5}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{22.161933245654577`, 20.09094658372376}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {25.661933245654577, 23.59094658372376}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.41939633676206, 19.851973444843264`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.91939633676206, 23.351973444843264}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{26.355922550737972`, 9.221737586326583}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {29.855922550737972, 12.721737586326583}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{28.460954949062184`, 25.677901328496773`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {31.960954949062184, 29.177901328496773}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{30.72707656250398, 33.70464767034999}], InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {34.22707656250398, 37.20464767034999}]}, 
+                  InsetBox["12", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 13->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{18.039285934685445`, 18.901370965264793`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {21.539285934685445, 22.401370965264793}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.41939633676206, 19.851973444843264`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.91939633676206, 23.351973444843264}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.48579973696373, 22.27283975117128}], InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.98579973696373, 25.77283975117128}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{26.968916096632803`, 8.156882385187131}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {30.468916096632803, 11.656882385187131}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{29.57619368632773, 26.847376660620967`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {33.07619368632773, 30.347376660620967}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{31.85992860577352, 34.52808210653076}], InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {35.35992860577352, 38.02808210653076}]}, 
+                  InsetBox["13", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 14->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{19.07857186937089, 17.802741930529585`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {22.57857186937089, 21.302741930529585}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{22.161933245654577`, 20.09094658372376}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {25.661933245654577, 23.59094658372376}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.41939633676206, 19.851973444843264`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.91939633676206, 23.351973444843264}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{27.581909642527634`, 7.09202718404768}], InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {31.081909642527634, 10.59202718404768}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{30.691432423593277`, 28.01685199274516}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {34.19143242359328, 31.51685199274516}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{32.992780649043056`, 35.35151654271153}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {36.492780649043056, 38.85151654271153}]}, 
+                  InsetBox["14", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 15->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{20.117857804056335`, 16.704112895794378`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {23.617857804056335, 20.204112895794378}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{21., 19.}], InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    FontColor->RGBColor[0.1, 0.46, 0.7]], {24.5, 22.5}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{25., 21.}], InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    FontColor->RGBColor[0.1, 0.46, 0.7]], {28.5, 24.5}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{28.194903188422465`, 6.027171982908229}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {31.694903188422465, 9.527171982908229}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{31.806671160858823`, 29.186327324869353`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {35.306671160858826, 32.68632732486935}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{34.12563269231259, 36.1749509788923}], InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 0.7]], {37.62563269231259, 39.6749509788923}]},
+                   InsetBox["15", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 16->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{18.039285934685445`, 18.901370965264793`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {21.539285934685445, 22.401370965264793}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{21., 19.}], InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    FontColor->RGBColor[0.1, 0.46, 0.7]], {24.5, 22.5}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{24.41939633676206, 19.851973444843264`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {27.91939633676206, 23.351973444843264}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{28.807896734317296`, 4.962316781768777}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {32.307896734317296, 8.462316781768777}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{31.806671160858823`, 29.186327324869353`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {35.306671160858826, 32.68632732486935}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{35.25848473558213, 36.998385415073066`}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {38.75848473558213, 40.498385415073066}]}, 
+                  InsetBox["16", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 17->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{17., 20.}], InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    FontColor->RGBColor[0.1, 0.46, 0.7]], {20.5, 23.5}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{18.676133508690846`, 16.81810683255248}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {22.176133508690846, 20.31810683255248}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{25., 21.}], InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    FontColor->RGBColor[0.1, 0.46, 0.7]], {28.5, 24.5}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{29.420890280212127`, 3.897461580629326}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {32.92089028021213, 7.397461580629326}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{30.691432423593277`, 28.01685199274516}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {34.19143242359328, 31.51685199274516}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{36.39133677885167, 37.821819851253835`}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {39.89133677885167, 41.321819851253835}]}, 
+                  InsetBox["17", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 18->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{15.960714065314555`, 21.098629034735207`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {19.460714065314555, 24.598629034735207}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{17.51420026303627, 15.727160248828719`}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {21.01420026303627, 19.227160248828717}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{25.58060366323794, 22.148026555156736`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {29.08060366323794, 25.648026555156736}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{29.57619368632773, 26.847376660620967`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {33.07619368632773, 30.347376660620967}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{30.03388382610696, 2.8326063794898744`}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {33.53388382610696, 6.332606379489874}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{37.524188822121204`, 38.645254287434604`}], 
+                   InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {41.024188822121204, 42.145254287434604}]}, 
+                  InsetBox["18", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 19->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{14.92142813062911, 22.197258069470415`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {18.42142813062911, 25.697258069470415}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{16.352267017381692`, 14.636213665104957`}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {19.852267017381692, 18.136213665104957}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{26.161207326475882`, 23.296053110313473`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {29.661207326475882, 26.796053110313473}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{28.460954949062184`, 25.677901328496773`}], 
+                   InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {31.960954949062184, 29.177901328496773}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{30.64687737200179, 1.7677511783504227`}], 
+                   InsetBox[
+                    StyleBox["6",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {34.14687737200179, 5.267751178350423}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{38.65704086539074, 39.46868872361537}], InsetBox[
+                    StyleBox["5",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {42.15704086539074, 42.96868872361537}]}, 
+                  InsetBox["19", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}], 20->
+                GraphicsBox[{
+                  StyleBox[{},
+                   PlotLabel -> $CellContext`info], 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{13.882142195943665`, 23.295887104205622`}], 
+                   InsetBox[
+                    StyleBox["2",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {17.382142195943665, 26.795887104205622}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{15.190333771727115`, 13.545267081381196`}], 
+                   InsetBox[
+                    StyleBox["3",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {18.690333771727115, 17.045267081381198}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{26.741810989713823`, 24.44407966547021}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {30.241810989713823, 27.94407966547021}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{27.322414652951764`, 25.592106220626945`}], 
+                   InsetBox[
+                    StyleBox["4",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {30.822414652951764, 29.092106220626945}]}, 
+                  {RGBColor[0.1, 0.46, 0.7], PointSize[0.015], 
+                   PointBox[{27.34571621179664, 24.50842599637258}], InsetBox[
+                    StyleBox["1",
+                    StripOnInput->False,
+                    LineColor->RGBColor[0.1, 0.46, 0.7],
+                    FrontFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    BackFaceColor->RGBColor[0.1, 0.46, 0.7],
+                    GraphicsColor->RGBColor[0.1, 0.46, 0.7],
+                    
+                    FontColor->RGBColor[
+                    0.1, 0.46, 
+                    0.7]], {30.84571621179664, 28.00842599637258}]}, 
+                  InsetBox["20", {-90, -90}]},
+                 Frame->True,
+                 PlotRange->{{-100, 100}, {-100, 100}}]}, 
+                Dynamic[$CellContext`i7$$],
+                Alignment->Automatic,
+                ImageSize->All,
+                TransitionDirection->Horizontal,
+                TransitionDuration->0.5,
+                TransitionEffect->Automatic],
+               Identity,
+               Editable->True,
+               Selectable->True],
+              ImageMargins->10],
+             Deployed->False,
+             StripOnInput->False,
+             ScriptLevel->0,
+             GraphicsBoxOptions->{PreserveImageOptions->True},
+             Graphics3DBoxOptions->{PreserveImageOptions->True}],
+            Identity,
+            Editable->False,
+            Selectable->False],
+           Alignment->{Left, Center},
+           Background->GrayLevel[1],
+           Frame->1,
+           FrameStyle->GrayLevel[0, 0.2],
+           ItemSize->Automatic,
+           StripOnInput->False]}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Top}}, 
+          "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+          "RowsIndexed" -> {}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.7], {
+             Offset[0.5599999999999999]}, 
+            Offset[0.7]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.4], {
+             Offset[0.8]}, 
+            Offset[0.4]}, "RowsIndexed" -> {}}], If[
+        And[
+         CurrentValue["NotebookSelected"], 
+         CurrentValue["SelectionOver"]], 
+        Manipulate`Dump`ReadControllerState[
+         Map[Manipulate`Dump`updateOneVar[#, 
+           CurrentValue["PreviousFormatTime"], 
+           CurrentValue["CurrentFormatTime"]]& , {
+           
+           Manipulate`Dump`controllerLink[{$CellContext`i7$$, \
+$CellContext`i7$3893$$}, "X1", 
+            If["DefaultAbsolute", True, "JB1"], False, {1, 20, 1}, 20, 1.]}], 
+         CurrentValue[{
+          "ControllerData", {
+           "Gamepad", "Joystick", "Multi-Axis Controller"}}], {}]],
+       ImageSizeCache->{547., {279.25, 287.25}}],
+      DefaultBaseStyle->{},
+      FrameMargins->{{5, 5}, {5, 5}}],
+     BaselinePosition->Automatic,
+     ImageMargins->0],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "ListAnimate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.860728860276207*^9, 3.860728898227006*^9, 3.860729706277134*^9, 
+   3.8607304580043015`*^9, 3.860730511653304*^9, 3.86073099092201*^9, 
+   3.860731199896284*^9, 3.8607312710535145`*^9, 3.8607315284829645`*^9, 
+   3.8607316113288517`*^9, 3.860731723999222*^9, 3.8607319267782063`*^9, {
+   3.8607326893364487`*^9, 3.860732700737008*^9}, 3.860732759815732*^9, {
+   3.8607330262051516`*^9, 3.860733074400298*^9}, 3.8607376725696325`*^9, {
+   3.860737731711995*^9, 3.8607377742451344`*^9}, 3.8607381384285955`*^9, 
+   3.8607382647760725`*^9, 3.860770581061307*^9, 3.8607707332486153`*^9, 
+   3.86077080821908*^9, 3.8607710962306805`*^9, 3.8607711881189413`*^9, 
+   3.860771345174055*^9, 3.860771391915532*^9, 3.860771438173749*^9, 
+   3.8607715495986385`*^9, {3.860771650168271*^9, 3.860771674912881*^9}, 
+   3.860771769584564*^9, 3.8608501076183386`*^9, 3.8608506541181498`*^9, 
+   3.8608507596951876`*^9, 3.8608508368505936`*^9, 3.860850950993743*^9, {
+   3.860851027237914*^9, 3.8608510550476074`*^9}, 3.8608510952961583`*^9, 
+   3.860851184178735*^9, {3.8608512764526677`*^9, 3.860851323062067*^9}, 
+   3.860851447119728*^9, 3.860851494116356*^9, 3.8608535611974416`*^9, 
+   3.860853713810246*^9, 3.860854015043835*^9, 3.8608567810875835`*^9, 
+   3.8608568318096514`*^9, {3.860856889676473*^9, 3.860856980771121*^9}, {
+   3.8608570293377924`*^9, 3.8608570507747984`*^9}, 3.8608571217536373`*^9, {
+   3.860857304472085*^9, 3.860857327760284*^9}, 3.860896823078068*^9, 
+   3.860899662438682*^9, 3.861453589823169*^9, 3.861453895462914*^9, 
+   3.861454822208932*^9, 3.8614552087730155`*^9, 3.8614554120236764`*^9, {
+   3.861455699812705*^9, 3.8614557198806305`*^9}, 3.8614557524124804`*^9, 
+   3.8614558102937403`*^9, 3.861456126129346*^9, 3.861456724743355*^9, 
+   3.861457295538782*^9, 3.8614584159738255`*^9, 3.8614594368091717`*^9, 
+   3.8614599874589667`*^9, 3.86146056294617*^9, 3.861460766227012*^9, 
+   3.8614608168404703`*^9, 3.8614608727478495`*^9, 3.861461007585426*^9, 
+   3.861461087575817*^9, 3.8614617732218437`*^9, 3.8614628809757533`*^9, {
+   3.8614633100485163`*^9, 3.8614633362386065`*^9}, 3.8614636197037745`*^9, 
+   3.861463760347287*^9, {3.861464801426714*^9, 3.8614648335183697`*^9}, {
+   3.8614651668535776`*^9, 3.8614652249454145`*^9}, 3.8614655438773355`*^9, 
+   3.8614657278325253`*^9, 3.861465976134078*^9, 3.861466014325584*^9, {
+   3.8614660560853915`*^9, 3.8614660730863743`*^9}, 3.8614661227626476`*^9, 
+   3.861466186350173*^9, 3.8614663187324047`*^9, 3.8614664054839797`*^9, 
+   3.8614666413219485`*^9, 3.861467009213069*^9, 3.861467086505148*^9, 
+   3.8614671458283434`*^9, 3.861467209227483*^9, 3.861467252624216*^9, 
+   3.8614673851508074`*^9, 3.8614675679282265`*^9, 3.8614676478620443`*^9, {
+   3.8614677083899784`*^9, 3.861467730062212*^9}, 3.861467867150173*^9, 
+   3.861467940718686*^9, 3.8614679893203125`*^9, 3.861468154290192*^9, 
+   3.861468251970189*^9, 3.8614684957079983`*^9, {3.86146856226265*^9, 
+   3.8614685827183065`*^9}, 3.861469130912806*^9, 3.8614700556934824`*^9, 
+   3.861470132559635*^9, 3.8614701721370363`*^9, 3.861470251275603*^9, 
+   3.861470309886917*^9, 3.861470378600975*^9, 3.8614704093076124`*^9, {
+   3.861493835572241*^9, 3.8614938510509157`*^9}, 3.8614939634407215`*^9, 
+   3.861494070013322*^9, 3.8614941824315934`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"arrPoints", "\[IndentingNewLine]", "convexPol", "\
+\[IndentingNewLine]", "convexPolIndexes", "\[IndentingNewLine]", "jDCH2"}], \
+"Input",
+ CellChangeTimes->{{3.860850694505865*^9, 3.8608507051317363`*^9}, 
+   3.8608511662646666`*^9, {3.8614537550852423`*^9, 3.861453756139293*^9}, {
+   3.8614537981994405`*^9, 3.861453800953653*^9}, {3.861454605413417*^9, 
+   3.8614546079160376`*^9}, {3.861454850557962*^9, 3.86145485289328*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.7967204855176035`"}], ",", "26.836951053282725`"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"22.478521168296396`", ",", "20.27049684465942`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6.160732502766708`", ",", "15.26544250670425`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"18.895710771476857`", ",", "12.402796556042354`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "25.98671623234851`"}], ",", "66.83332994365799`"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"74.46371832320605`", ",", "57.567983330078846`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"68.61114504382056`", ",", 
+     RowBox[{"-", "39.72936290300809`"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8608507056832294`*^9, 3.8608511666360846`*^9, 3.861453756870175*^9, 
+   3.861453801615941*^9, 3.861453902206509*^9, {3.8614545909143066`*^9, 
+   3.861454608699686*^9}, {3.8614548286478634`*^9, 3.8614548535230255`*^9}, 
+   3.8614552819823275`*^9, 3.861455761430716*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "25.98671623234851`"}], ",", "66.83332994365799`"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.7967204855176035`"}], ",", "26.836951053282725`"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6.110793138375559`", ",", "15.221744441770376`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"68.61114504382056`", ",", 
+     RowBox[{"-", "39.72936290300809`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"74.46371832320605`", ",", "57.567983330078846`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.8608507056832294`*^9, 3.8608511666360846`*^9, 3.861453756870175*^9, 
+   3.861453801615941*^9, 3.861453902206509*^9, {3.8614545909143066`*^9, 
+   3.861454608699686*^9}, {3.8614548286478634`*^9, 3.8614548535230255`*^9}, 
+   3.8614552819823275`*^9, 3.861455761433711*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "1", ",", "3", ",", "7", ",", "6"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.8608507056832294`*^9, 3.8608511666360846`*^9, 3.861453756870175*^9, 
+   3.861453801615941*^9, 3.861453902206509*^9, {3.8614545909143066`*^9, 
+   3.861454608699686*^9}, {3.8614548286478634`*^9, 3.8614548535230255`*^9}, 
+   3.8614552819823275`*^9, 3.8614557614357176`*^9}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{
+  3.8608507056832294`*^9, 3.8608511666360846`*^9, 3.861453756870175*^9, 
+   3.861453801615941*^9, 3.861453902206509*^9, {3.8614545909143066`*^9, 
+   3.861454608699686*^9}, {3.8614548286478634`*^9, 3.8614548535230255`*^9}, 
+   3.8614552819823275`*^9, 3.8614557614377127`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Jarvis", "[", "arrPoints", "]"}], "\[IndentingNewLine]", 
+   "convexPol", "\[IndentingNewLine]", 
+   RowBox[{"diameterCH", "[", "convexPol", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"Show", "[", "GR1", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.858698018917655*^9, 3.8586980767063756`*^9}, {
+   3.8586981281624784`*^9, 3.858698129890513*^9}, {3.8586982086676855`*^9, 
+   3.85869821329074*^9}, {3.8592647911886435`*^9, 3.859264798777115*^9}, {
+   3.859264953389821*^9, 3.859264955044571*^9}, {3.859265032667119*^9, 
+   3.859265055486366*^9}, {3.8592651154373612`*^9, 3.8592651247445145`*^9}, {
+   3.859265322947178*^9, 3.859265323011736*^9}, {3.859265413559189*^9, 
+   3.8592654169972105`*^9}, {3.8592663501120605`*^9, 3.859266410283325*^9}, {
+   3.85926685002505*^9, 3.859266861776209*^9}, 3.8592669088713074`*^9, {
+   3.859267030659021*^9, 3.859267295308319*^9}, {3.8592704918893743`*^9, 
+   3.8592710562143126`*^9}, {3.860139388300715*^9, 3.860139401844592*^9}, {
+   3.8601397122026052`*^9, 3.860139718261684*^9}, {3.860139785924124*^9, 
+   3.860139794586554*^9}, {3.8601398564036455`*^9, 3.8601400058636694`*^9}, {
+   3.860140040312497*^9, 3.860140040507603*^9}, 3.860140109958924*^9, 
+   3.8601401407975006`*^9, {3.860140182969643*^9, 3.8601401924454403`*^9}, {
+   3.860140242672986*^9, 3.8601402465967684`*^9}, {3.8601403144887075`*^9, 
+   3.8601404365400734`*^9}, {3.8601406323901205`*^9, 3.860140646594878*^9}, {
+   3.860140686266676*^9, 3.860140730672658*^9}, {3.8601407644035797`*^9, 
+   3.860140808638463*^9}, {3.8601408628237524`*^9, 3.8601408797874374`*^9}, {
+   3.8601409403507442`*^9, 3.860140941631279*^9}, {3.8601411031658278`*^9, 
+   3.8601411035466223`*^9}, {3.860141234918604*^9, 3.860141260205903*^9}, {
+   3.8601413093985977`*^9, 3.860141517528964*^9}, {3.860141650726221*^9, 
+   3.8601417645637507`*^9}, {3.860142118627677*^9, 3.860142129807485*^9}, {
+   3.8601437610317774`*^9, 3.860143853885835*^9}, {3.860144285788263*^9, 
+   3.8601442897540913`*^9}, {3.8601444327683268`*^9, 3.8601444630950947`*^9}, 
+   3.8601448020953054`*^9, {3.860145019337171*^9, 3.860145022315571*^9}, {
+   3.860145252535348*^9, 3.8601452536544743`*^9}, {3.8601453809745398`*^9, 
+   3.8601453889476385`*^9}, {3.860145490195006*^9, 3.8601454907372103`*^9}, {
+   3.8601460402540293`*^9, 3.860146087534258*^9}, {3.860146185363914*^9, 
+   3.860146197365158*^9}, {3.86014626755474*^9, 3.8601462704740963`*^9}, {
+   3.860146301074032*^9, 3.860146301486882*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"6", ",", "5", ",", "2", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8601421315277195`*^9, 3.8601421465418725`*^9}, {
+   3.8601432618856134`*^9, 3.860143281813774*^9}, 3.86014354275401*^9, 
+   3.860143772627438*^9, 3.860143856018592*^9, 3.860143920701314*^9, {
+   3.860144390230463*^9, 3.860144396512067*^9}, 3.860144467722236*^9, 
+   3.8601446085337143`*^9, 3.8601447561485424`*^9, 3.86014519195892*^9, {
+   3.8601452555070486`*^9, 3.860145260305418*^9}, 3.8601453900217676`*^9, 
+   3.860145499147735*^9, 3.8601459632479715`*^9, {3.8601460752748346`*^9, 
+   3.860146088753441*^9}, 3.860146205425649*^9, 3.8601463274286203`*^9, {
+   3.8601469438073435`*^9, 3.8601469724167194`*^9}, {3.8601476381464653`*^9, 
+   3.8601476559355364`*^9}, {3.8601487450882673`*^9, 3.860148760984863*^9}, 
+   3.86014879701744*^9, 3.860148828567129*^9, {3.8601491443132477`*^9, 
+   3.860149156587484*^9}, {3.8601493079939656`*^9, 3.8601493143640766`*^9}, 
+   3.8601493851907425`*^9, {3.8601495790439863`*^9, 3.860149622688178*^9}, {
+   3.860149725763788*^9, 3.860149741700839*^9}, 3.860149843564681*^9, 
+   3.8601513426911464`*^9, 3.8607381084668827`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "36.535048664793045`"}], ",", "79.78114160714398`"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "29.902835756524244`"}], ",", "47.13615565692638`"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"14.59132309669225`", ",", 
+     RowBox[{"-", "24.139429763181504`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"76.16599817932837`", ",", "69.67706962737195`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.8601421315277195`*^9, 3.8601421465418725`*^9}, {
+   3.8601432618856134`*^9, 3.860143281813774*^9}, 3.86014354275401*^9, 
+   3.860143772627438*^9, 3.860143856018592*^9, 3.860143920701314*^9, {
+   3.860144390230463*^9, 3.860144396512067*^9}, 3.860144467722236*^9, 
+   3.8601446085337143`*^9, 3.8601447561485424`*^9, 3.86014519195892*^9, {
+   3.8601452555070486`*^9, 3.860145260305418*^9}, 3.8601453900217676`*^9, 
+   3.860145499147735*^9, 3.8601459632479715`*^9, {3.8601460752748346`*^9, 
+   3.860146088753441*^9}, 3.860146205425649*^9, 3.8601463274286203`*^9, {
+   3.8601469438073435`*^9, 3.8601469724167194`*^9}, {3.8601476381464653`*^9, 
+   3.8601476559355364`*^9}, {3.8601487450882673`*^9, 3.860148760984863*^9}, 
+   3.86014879701744*^9, 3.860148828567129*^9, {3.8601491443132477`*^9, 
+   3.860149156587484*^9}, {3.8601493079939656`*^9, 3.8601493143640766`*^9}, 
+   3.8601493851907425`*^9, {3.8601495790439863`*^9, 3.860149622688178*^9}, {
+   3.860149725763788*^9, 3.860149741700839*^9}, 3.860149843564681*^9, 
+   3.8601513426911464`*^9, 3.8607381084748816`*^9}],
+
+Cell[BoxData["115.81619508267622`"], "Output",
+ CellChangeTimes->{{3.8601421315277195`*^9, 3.8601421465418725`*^9}, {
+   3.8601432618856134`*^9, 3.860143281813774*^9}, 3.86014354275401*^9, 
+   3.860143772627438*^9, 3.860143856018592*^9, 3.860143920701314*^9, {
+   3.860144390230463*^9, 3.860144396512067*^9}, 3.860144467722236*^9, 
+   3.8601446085337143`*^9, 3.8601447561485424`*^9, 3.86014519195892*^9, {
+   3.8601452555070486`*^9, 3.860145260305418*^9}, 3.8601453900217676`*^9, 
+   3.860145499147735*^9, 3.8601459632479715`*^9, {3.8601460752748346`*^9, 
+   3.860146088753441*^9}, 3.860146205425649*^9, 3.8601463274286203`*^9, {
+   3.8601469438073435`*^9, 3.8601469724167194`*^9}, {3.8601476381464653`*^9, 
+   3.8601476559355364`*^9}, {3.8601487450882673`*^9, 3.860148760984863*^9}, 
+   3.86014879701744*^9, 3.860148828567129*^9, {3.8601491443132477`*^9, 
+   3.860149156587484*^9}, {3.8601493079939656`*^9, 3.8601493143640766`*^9}, 
+   3.8601493851907425`*^9, {3.8601495790439863`*^9, 3.860149622688178*^9}, {
+   3.860149725763788*^9, 3.860149741700839*^9}, 3.860149843564681*^9, 
+   3.8601513426911464`*^9, 3.8607381084828825`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[
+  StyleBox[{},
+   PlotLabel -> $CellContext`info],
+  Frame->True,
+  PlotRange->{{45, -5}, {45, -5}}]], "Output",
+ CellChangeTimes->{{3.8601421315277195`*^9, 3.8601421465418725`*^9}, {
+   3.8601432618856134`*^9, 3.860143281813774*^9}, 3.86014354275401*^9, 
+   3.860143772627438*^9, 3.860143856018592*^9, 3.860143920701314*^9, {
+   3.860144390230463*^9, 3.860144396512067*^9}, 3.860144467722236*^9, 
+   3.8601446085337143`*^9, 3.8601447561485424`*^9, 3.86014519195892*^9, {
+   3.8601452555070486`*^9, 3.860145260305418*^9}, 3.8601453900217676`*^9, 
+   3.860145499147735*^9, 3.8601459632479715`*^9, {3.8601460752748346`*^9, 
+   3.860146088753441*^9}, 3.860146205425649*^9, 3.8601463274286203`*^9, {
+   3.8601469438073435`*^9, 3.8601469724167194`*^9}, {3.8601476381464653`*^9, 
+   3.8601476559355364`*^9}, {3.8601487450882673`*^9, 3.860148760984863*^9}, 
+   3.86014879701744*^9, 3.860148828567129*^9, {3.8601491443132477`*^9, 
+   3.860149156587484*^9}, {3.8601493079939656`*^9, 3.8601493143640766`*^9}, 
+   3.8601493851907425`*^9, {3.8601495790439863`*^9, 3.860149622688178*^9}, {
+   3.860149725763788*^9, 3.860149741700839*^9}, 3.860149843564681*^9, 
+   3.8601513426911464`*^9, 3.8607381084828825`*^9}]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.860149753216852*^9}]
+},
+WindowToolbars->"RulerBar",
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.4 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4289, 72, 452, "Text"],
+Cell[CellGroupData[{
+Cell[4872, 96, 56359, 1218, 9034, "Input"],
+Cell[61234, 1316, 3348, 46, 43, "Output"],
+Cell[64585, 1364, 87767, 1767, 613, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[152389, 3136, 445, 6, 128, "Input"],
+Cell[152837, 3144, 1075, 26, 43, "Output"],
+Cell[153915, 3172, 890, 23, 43, "Output"],
+Cell[154808, 3197, 398, 7, 43, "Output"],
+Cell[155209, 3206, 323, 5, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[155569, 3216, 2524, 36, 176, "Input"],
+Cell[158096, 3254, 1180, 17, 60, "Output"],
+Cell[159279, 3273, 1589, 31, 60, "Output"],
+Cell[160871, 3306, 1133, 15, 60, "Output"],
+Cell[162007, 3323, 1227, 20, 735, "Output"]
+}, Open  ]],
+Cell[163249, 3346, 87, 1, 140, "Input"]
+}
+]
+*)
+

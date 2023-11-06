@@ -1,0 +1,1321 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     64241,       1313]
+NotebookOptionsPosition[     63852,       1295]
+NotebookOutlinePosition[     64223,       1311]
+CellTagsIndexPosition[     64180,       1308]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "\:041b\:0430\:0431\:043e\:0440\:0430\:0442\:043e\:0440\:043d\:0430\:044f \
+\:0440\:0430\:0431\:043e\:0442\:0430 4\n\n\:0414\:0430\:043d\:043e:\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"P", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["p", "1"], "(", 
+       RowBox[{
+        SubscriptBox["x", "1"], ",", 
+        SubscriptBox["y", "1"]}], ")"}], ",", " ", 
+      RowBox[{
+       SubscriptBox["p", "2"], "(", 
+       RowBox[{
+        SubscriptBox["x", "2"], ",", 
+        SubscriptBox["y", "2"]}], ")"}], ",", "...", ",", 
+      RowBox[{
+       SubscriptBox["p", "n"], "(", 
+       RowBox[{
+        SubscriptBox["x", "n"], ",", 
+        SubscriptBox["y", "n"]}], ")"}]}], "}"}]}], TraditionalForm]]],
+ " \[Dash] \:043f\:0440\:043e\:0438\:0437\:0432\:043e\:043b\:044c\:043d\:043e\
+\:0435 \:043c\:043d\:043e\:0436\:0435\:0441\:0442\:0432\:043e \:0442\:043e\
+\:0447\:0435\:043a \:043d\:0430 \:043f\:043b\:043e\:0441\:043a\:043e\:0441\
+\:0442\:0438.\n\n\:041d\:0430\:0434\:043e: \:0418\:0441\:043f\:043e\:043b\
+\:044c\:0437\:0443\:044f \
+\[OpenCurlyDoubleQuote]\:0430\:043b\:0433\:043e\:0440\:0438\:0442\:043c \
+\:0413\:0440\:0435\:0445\:044d\:043c\:0430\[CloseCurlyDoubleQuote] \:043f\
+\:043e\:0441\:0442\:0440\:043e\:0438\:0442\:044c \:0432\:044b\:043f\:0443\
+\:043a\:043b\:0443\:044e \:043e\:0431\:043e\:043b\:043e\:0447\:043a\:0443 \
+\:043c\:043d\:043e\:0436\:0435\:0441\:0442\:0432\:0430 ",
+ Cell[BoxData[
+  FormBox["P", TraditionalForm]]],
+ ".\n\n\:041f\:0440\:0438\:043c\:0435\:0447\:0430\:043d\:0438\:044f: \:0432 \
+\:043a\:0430\:0447\:0435\:0441\:0442\:0432\:0435 \:0440\:0435\:0437\:0443\
+\:043b\:044c\:0442\:0430\:0442\:0430 \:0441\:043e\:0437\:0434\:0430\:0435\
+\:0442\:0441\:044f \:0430\:043d\:0438\:043c\:0430\:0446\:0438\:044f, \:0432 \
+\:043a\:043e\:0442\:043e\:0440\:043e\:0439 \:043e\:0442\:043e\:0431\:0440\
+\:0430\:0436\:0430\:0435\:0442\:0441\:044f \:043b\:043e\:043c\:0430\:043d\
+\:0430\:044f, \:043f\:043e\:0441\:0442\:0440\:043e\:0435\:043d\:043d\:0430\
+\:044f \:043f\:043e \:044d\:043b\:0435\:043c\:0435\:043d\:0442\:0430\:043c \
+\:0441\:0442\:0435\:043a\:0430, \:043d\:0430\:043a\:0430\:043f\:043b\:0438\
+\:0432\:0430\:044e\:0449\:0435\:0433\:043e \:0432\:0435\:0440\:0448\:0438\
+\:043d\:044b \:0432\:044b\:043f\:0443\:043a\:043b\:043e\:0439 \:043e\:0431\
+\:043e\:043b\:043e\:0447\:043a\:0438 (\:043b\:044e\:0431\:043e\:0435 \:0438\
+\:0437\:043c\:0435\:043d\:0435\:043d\:0438\:0435 \:0432 \:0441\:0442\:0435\
+\:043a\:0435 \[Dash] \:044d\:0442\:043e \:043d\:043e\:0432\:044b\:0439 \:043a\
+\:0430\:0434\:0440 \:0430\:043d\:0438\:043c\:0430\:0446\:0438\:0438).\n\n\
+\:0420\:0435\:0448\:0435\:043d\:0438\:0435:"
+}], "Text",
+ CellChangeTimes->{{3.8577493417698364`*^9, 3.857749541778829*^9}, 
+   3.857750124270795*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "FUNCTIONS", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:0432\:0435\:043a\:0442\:043e\:0440\:043e\:043d\:043e\:0435", " ", 
+    "\:043f\:0440\:043e\:0438\:0437\:0432\:0435\:0434\:0435\:043d\:0438\:0435\
+", " ", "\:0432\:0435\:043a\:0442\:043e\:0440\:043e\:0432", " ", 
+    "\:0410\:0412", " ", "\:0438", " ", "\:0412\:0421"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"vectorProduct", "[", 
+     RowBox[{"A_", ",", "B_", ",", "C_"}], "]"}], ":=", 
+    RowBox[{"(", "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"B", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "-", 
+          RowBox[{"A", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"C", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "-", 
+          RowBox[{"B", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"B", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], "-", 
+          RowBox[{"A", "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"C", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "-", 
+          RowBox[{"B", "[", 
+           RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}]}], "]"}], 
+     "\[IndentingNewLine]", ")"}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "MAIN", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:043a\:043e\:043b\:0438\:0447\:0435\:0441\:0442\:0432\:043e", " ", 
+     "\:0442\:043e\:0447\:0435\:043a"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"n", "=", 
+     RowBox[{"RandomChoice", "[", 
+      RowBox[{"Range", "[", 
+       RowBox[{"15", ",", "40"}], "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:043c\:043d\:043e\:0436\:0435\:0441\:0442\:0432\:043e", " ", 
+     "\:0442\:043e\:0447\:0435\:043a"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"P", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0433\:0435\:043d\:0435\:0440\:0430\:0446\:0438\:044f", " ", 
+     "\:0442\:043e\:0447\:0435\:043a"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", 
+     RowBox[{"i", "\[LessEqual]", "n"}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Pnt", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"RandomChoice", "[", 
+          RowBox[{"Range", "[", 
+           RowBox[{"0", ",", "40"}], "]"}], "]"}], ",", 
+         RowBox[{"RandomChoice", "[", 
+          RowBox[{"Range", "[", 
+           RowBox[{"0", ",", "40"}], "]"}], "]"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "\:043f\:0440\:043e\:0432\:0435\:0440\:043a\:0430", " ", 
+        "\:043d\:0430", " ", 
+        "\:0443\:043d\:0438\:043a\:0430\:043b\:044c\:043d\:043e\:0441\:0442\
+\:044c"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"IntersectingQ", "[", 
+          RowBox[{"P", ",", 
+           RowBox[{"{", "Pnt", "}"}]}], "]"}], "\[Equal]", "False"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"AppendTo", "[", 
+         RowBox[{"P", ",", "Pnt"}], "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"i", "--"}], ";"}]}], "\[IndentingNewLine]", "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:043d\:0430\:0447\:0430\:043b\:044c\:043d\:044b\:0435", " ", 
+     "\:0438\:043d\:0434\:0435\:043a\:0441\:044b", " ", 
+     "\:0442\:043e\:0447\:0435\:043a"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"PIndexes", "=", 
+     RowBox[{"Range", "[", "n", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:041d\:0430\:0447\:0430\:043b\:043e", " ", 
+     "\:0412\:044b\:043f\:043e\:043b\:043d\:0435\:043d\:0438\:044f", " ", 
+     "\:0410\:043b\:0433\:043e\:0440\:0438\:0442\:043c\:0430", " ", 
+     "\:0413\:0440\:0435\:0445\:044d\:043c\:0430"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:043f\:043e\:0438\:0441\:043a", " ", 
+     "\:043a\:0440\:0430\:0439\:043d\:0435\:0439", " ", 
+     "\:043b\:0435\:0432\:043e\:0439", " ", 
+     "\:0442\:043e\:0447\:043a\:0438"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "2"}], ",", 
+     RowBox[{"i", "\[LessEqual]", "n"}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"P", "[", 
+          RowBox[{"[", 
+           RowBox[{"PIndexes", "[", 
+            RowBox[{"[", "i", "]"}], "]"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "<", 
+        RowBox[{
+         RowBox[{"P", "[", 
+          RowBox[{"[", 
+           RowBox[{"PIndexes", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"PIndexes", "[", 
+            RowBox[{"[", "i", "]"}], "]"}], ",", 
+           RowBox[{"PIndexes", "[", 
+            RowBox[{"[", "1", "]"}], "]"}]}], "}"}], "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"PIndexes", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"PIndexes", "[", 
+            RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+     "\:0441\:043e\:0440\:0442\:0438\:0440\:043e\:0432\:043a\:0430", " ", "[",
+       "\:0438\:043d\:0434\:0435\:043a\:0441\:043e\:0432", "]"}], " ", 
+     "\:0442\:043e\:0447\:0435\:043a", " ", "\:043f\:043e", " ", 
+     "\:043b\:0435\:0432\:043e\:0439", " ", 
+     "\:0431\:043b\:0438\:0437\:043e\:0441\:0442\:0438", " ", "\:043a", " ", 
+     "\:0441\:0442\:0430\:0440\:0442\:043e\:0432\:043e\:0439", " ", 
+     "\:0442\:043e\:0447\:043a\:0435"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "3"}], ",", 
+     RowBox[{"i", "\[LessEqual]", "n"}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"j", "=", "i"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"j", ">", "2"}], "&&", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"vectorProduct", "[", 
+            RowBox[{
+             RowBox[{"P", "[", 
+              RowBox[{"[", 
+               RowBox[{"PIndexes", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], ",", 
+             RowBox[{"P", "[", 
+              RowBox[{"[", 
+               RowBox[{"PIndexes", "[", 
+                RowBox[{"[", 
+                 RowBox[{"j", "-", "1"}], "]"}], "]"}], "]"}], "]"}], ",", 
+             RowBox[{"P", "[", 
+              RowBox[{"[", 
+               RowBox[{"PIndexes", "[", 
+                RowBox[{"[", "j", "]"}], "]"}], "]"}], "]"}]}], "]"}], "<", 
+           "0"}], ")"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"PIndexes", "[", 
+             RowBox[{"[", "j", "]"}], "]"}], ",", 
+            RowBox[{"PIndexes", "[", 
+             RowBox[{"[", 
+              RowBox[{"j", "-", "1"}], "]"}], "]"}]}], "}"}], "=", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"PIndexes", "[", 
+             RowBox[{"[", 
+              RowBox[{"j", "-", "1"}], "]"}], "]"}], ",", 
+            RowBox[{"PIndexes", "[", 
+             RowBox[{"[", "j", "]"}], "]"}]}], "}"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"j", "-=", "1"}], ";"}]}], "\[IndentingNewLine]", "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:043c\:043d\:043e\:0436\:0435\:0441\:0442\:0432\:043e", " ", 
+     "\:0442\:043e\:0447\:0435\:043a", " ", 
+     "\:0432\:044b\:043f\:0443\:043a\:043b\:043e\:0439", " ", 
+     "\:043e\:0431\:043e\:043b\:043e\:0447\:043a\:0438"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"GRP", ":=", 
+     RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"PointSize", "[", "0.015", "]"}], ",", "Black", ",", 
+         RowBox[{"Point", "[", "P", "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"Text", "[", 
+            RowBox[{"t", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"P", "[", 
+                  RowBox[{"[", "t", "]"}], "]"}], "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "+", "1"}], ",", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"P", "[", 
+                  RowBox[{"[", "t", "]"}], "]"}], "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], "+", "1"}]}], "}"}]}], "]"}],
+            ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", 
+             RowBox[{"Length", "[", "P", "]"}]}], "}"}]}], "]"}]}], 
+        "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "5"}], ",", "45"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "5"}], ",", "45"}], "}"}]}], "}"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Frame", "\[Rule]", "True"}]}], "\[IndentingNewLine]", "]"}]}],
+     ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:043d\:0430\:0447\:0430\:043b\:044c\:043d\:043e\:0435", " ", 
+     "\:0441\:043e\:0441\:0442\:043e\:044f\:043d\:0438\:0435", " ", 
+     RowBox[{"(", 
+      RowBox[{
+      "\:043e\:0442\:0440\:0435\:0437\:043a\:043e\:0432", " ", 
+       "\:043d\:0435\:0442"}], ")"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["GRL", "0"], "=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{
+       RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "5"}], ",", "45"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "5"}], ",", "45"}], "}"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0438\:043d\:0434\:0435\:043a\:0441\:044b", " ", 
+     "\:043f\:0435\:0440\:0432\:043e\:0433\:043e", " ", 
+     "\:043e\:0442\:0440\:0435\:0437\:043a\:0430", " ", 
+     "\:043e\:0431\:043e\:043b\:043e\:0447\:043a\:0438"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"PShellIndexes", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"PIndexes", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", 
+       RowBox[{"PIndexes", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:043f\:0435\:0440\:0432\:044b\:0439", " ", "\:043a\:0430\:0434\:0440", 
+     " ", "\:0441", " ", 
+     "\:043e\:0442\:0440\:0435\:0437\:043a\:0430\:043c\:0438"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["GRL", "1"], "=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"P", "[", 
+              RowBox[{"[", 
+               RowBox[{"PShellIndexes", "[", 
+                RowBox[{"[", "t", "]"}], "]"}], "]"}], "]"}], ",", 
+             RowBox[{"P", "[", 
+              RowBox[{"[", 
+               RowBox[{"PShellIndexes", "[", 
+                RowBox[{"[", 
+                 RowBox[{"t", "+", "1"}], "]"}], "]"}], "]"}], "]"}]}], "}"}],
+            "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "1", ",", 
+            RowBox[{
+             RowBox[{"Length", "[", "PShellIndexes", "]"}], "-", "1"}]}], 
+           "}"}]}], "]"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "5"}], ",", "45"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "5"}], ",", "45"}], "}"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0433\:0435\:043d\:0435\:0440\:0430\:0446\:0438\:044f", " ", 
+     "\:043e\:0431\:043e\:043b\:043e\:0447\:043a\:0438", " ", "\:043f\:043e", 
+     " ", "\:0432\:0435\:043a\:0442\:043e\:0440\:043d\:044b\:043c", " ", 
+     "\:043f\:0440\:043e\:0438\:0437\:0432\:0435\:0434\:0435\:043d\:0438\:044f\
+\:043c"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"i", "=", "3"}], ";", 
+      RowBox[{"k", "=", "2"}]}], ",", 
+     RowBox[{"i", "\[LessEqual]", "n"}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "\:043f\:043e\:0438\:0441\:043a", " ", 
+       "\:043f\:0440\:0430\:0432\:0438\:043b\:044c\:043d\:043e\:0439", " ", 
+       "\:0441\:043b\:0435\:0434\:0443\:044e\:0449\:0435\:0439", " ", 
+       "\:0442\:043e\:0447\:043a\:0438"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"vectorProduct", "[", 
+          RowBox[{
+           RowBox[{"P", "[", 
+            RowBox[{"[", 
+             RowBox[{"PShellIndexes", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{"Length", "[", "PShellIndexes", "]"}], "-", "1"}], 
+               "]"}], "]"}], "]"}], "]"}], ",", 
+           RowBox[{"P", "[", 
+            RowBox[{"[", 
+             RowBox[{"PShellIndexes", "[", 
+              RowBox[{"[", 
+               RowBox[{"Length", "[", "PShellIndexes", "]"}], "]"}], "]"}], 
+             "]"}], "]"}], ",", 
+           RowBox[{"P", "[", 
+            RowBox[{"[", 
+             RowBox[{"PIndexes", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "]"}], "]"}]}], "]"}], "<", 
+         "0"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"PShellIndexes", "=", 
+          RowBox[{"Delete", "[", 
+           RowBox[{"PShellIndexes", ",", 
+            RowBox[{"Length", "[", "PShellIndexes", "]"}]}], "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"(*", 
+          RowBox[{
+          "\:0437\:0430\:043f\:0438\:0441\:044c", " ", 
+           "\:0448\:0430\:0433\:0430"}], "*)"}], "\[IndentingNewLine]", 
+         RowBox[{
+          SubscriptBox["GRL", "k"], "=", 
+          RowBox[{"Graphics", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"Table", "[", 
+              RowBox[{
+               RowBox[{"Line", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"P", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"PShellIndexes", "[", 
+                    RowBox[{"[", "t", "]"}], "]"}], "]"}], "]"}], ",", 
+                  RowBox[{"P", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"PShellIndexes", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"t", "+", "1"}], "]"}], "]"}], "]"}], "]"}]}], 
+                 "}"}], "]"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"t", ",", "1", ",", 
+                 RowBox[{
+                  RowBox[{"Length", "[", "PShellIndexes", "]"}], "-", "1"}]}],
+                 "}"}]}], "]"}], "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"PlotRange", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"-", "5"}], ",", "45"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"-", "5"}], ",", "45"}], "}"}]}], "}"}]}]}], 
+           "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"k", "++"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "\:0434\:043e\:0431\:0430\:0432\:043b\:0435\:043d\:0438\:0435", " ", 
+        "\:043d\:043e\:0432\:043e\:0439", " ", 
+        "\:0442\:043e\:0447\:043a\:0438", " ", "\:0432", " ", 
+        "\:043c\:043d\:043e\:0436\:0435\:0441\:0442\:0432\:043e", " ", 
+        "\:0438\:043d\:0434\:0435\:043a\:0441\:043e\:0432", " ", 
+        "\:043e\:0431\:043e\:043b\:043e\:0447\:043a\:0438"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"PShellIndexes", ",", 
+        RowBox[{"PIndexes", "[", 
+         RowBox[{"[", "i", "]"}], "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       SubscriptBox["GRL", "k"], "=", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"Line", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"P", "[", 
+                RowBox[{"[", 
+                 RowBox[{"PShellIndexes", "[", 
+                  RowBox[{"[", "t", "]"}], "]"}], "]"}], "]"}], ",", 
+               RowBox[{"P", "[", 
+                RowBox[{"[", 
+                 RowBox[{"PShellIndexes", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"t", "+", "1"}], "]"}], "]"}], "]"}], "]"}]}], 
+              "}"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"t", ",", "1", ",", 
+              RowBox[{
+               RowBox[{"Length", "[", "PShellIndexes", "]"}], "-", "1"}]}], 
+             "}"}]}], "]"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "5"}], ",", "45"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "5"}], ",", "45"}], "}"}]}], "}"}]}]}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"k", "++"}], ";"}]}], "\[IndentingNewLine]", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:043a\:043e\:043b\:0438\:0447\:0435\:0441\:0442\:0432\:043e", " ", 
+     RowBox[{
+     "\:0448\:0430\:0433\:043e\:0432", "/", 
+      "\:0434\:0435\:0439\:0441\:0442\:0432\:0438\:0439"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"numOfSteps", "=", "k"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:0444\:0438\:043d\:0430\:043b\:044c\:043d\:044b\:0439", " ", 
+     "\:043a\:0430\:0434\:0440", " ", "\:0441", " ", 
+     "\:0437\:0430\:043c\:043a\:043d\:0443\:0442\:043e\:0439", " ", 
+     "\:043e\:0431\:043e\:043b\:043e\:0447\:043a\:043e\:0439", " ", 
+     RowBox[{"(", 
+      RowBox[{
+      "k", " ", "\:0440\:0430\:0432\:043d\:043e", " ", 
+       "\:0447\:0438\:0441\:043b\:0443", " ", 
+       "\:0442\:043e\:0447\:0435\:043a", " ", "\:0432", " ", 
+       "\:043e\:0431\:043e\:043b\:043e\:0447\:043a\:0435"}], ")"}]}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["GRL", "numOfSteps"], "=", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"P", "[", 
+              RowBox[{"[", 
+               RowBox[{"PShellIndexes", "[", 
+                RowBox[{"[", "t", "]"}], "]"}], "]"}], "]"}], ",", 
+             RowBox[{"P", "[", 
+              RowBox[{"[", 
+               RowBox[{"PShellIndexes", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{"Mod", "[", 
+                   RowBox[{"t", ",", 
+                    RowBox[{"Length", "[", "PShellIndexes", "]"}]}], "]"}], 
+                  "+", "1"}], "]"}], "]"}], "]"}], "]"}]}], "}"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "1", ",", 
+            RowBox[{"Length", "[", "PShellIndexes", "]"}]}], "}"}]}], "]"}], 
+        "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "5"}], ",", "45"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "5"}], ",", "45"}], "}"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "\:043d\:0435", " ", 
+     "\:0438\:0441\:043f\:043e\:043b\:044c\:0437\:0443\:0435\:0442\:0441\:044f\
+"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+     "\:043c\:043d\:043e\:0436\:0435\:0441\:0442\:0432\:043e", " ", 
+      "\:0441\:0430\:043c\:0438\:0445", " ", "\:0442\:043e\:0447\:0435\:043a",
+       " ", "\:043e\:0431\:043e\:043b\:043e\:0447\:043a\:0438"}], "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"PShell", "=", 
+      RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "\:0437\:0430\:043f\:043e\:043b\:043d\:0435\:043d\:0438\:0435", " ", 
+       "\:043c\:043d\:043e\:0436\:0435\:0441\:0442\:0432\:0430", " ", 
+       "\:0442\:043e\:0447\:0435\:043a"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", 
+      RowBox[{
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"PShell", ",", 
+         RowBox[{"P", "[", 
+          RowBox[{"[", 
+           RowBox[{"PShellIndexes", "[", 
+            RowBox[{"[", "k", "]"}], "]"}], "]"}], "]"}]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "1", ",", 
+         RowBox[{"Length", "[", "PShellIndexes", "]"}]}], "}"}]}], "]"}], 
+     ";"}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"ListAnimate", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Show", "[", 
+        RowBox[{"GRP", ",", 
+         SubscriptBox["GRL", "i"]}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "0", ",", "numOfSteps"}], "}"}]}], "]"}], ",", 
+     RowBox[{"AnimationRate", "\[Rule]", "3"}], ",", 
+     RowBox[{"AnimationRepetitions", "\[Rule]", "1"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.857749545217907*^9, 3.8577495458434653`*^9}, {
+   3.8577499430657854`*^9, 3.857750090162992*^9}, {3.8577502109630237`*^9, 
+   3.857750264082473*^9}, {3.857750346218031*^9, 3.8577505464744606`*^9}, {
+   3.8577796133989196`*^9, 3.8577796518214903`*^9}, {3.8577796979744177`*^9, 
+   3.8577799372438335`*^9}, {3.857779972094195*^9, 3.857779990149301*^9}, {
+   3.8577804002188015`*^9, 3.8577804322087727`*^9}, {3.8577804987973485`*^9, 
+   3.857780527502577*^9}, {3.8577805722222934`*^9, 3.8577806394389133`*^9}, {
+   3.8577807019282885`*^9, 3.8577809816108594`*^9}, {3.857781099371909*^9, 
+   3.857781294689454*^9}, {3.8577813410802937`*^9, 3.8577816205174565`*^9}, {
+   3.8577816860291243`*^9, 3.857781772277043*^9}, {3.8577818068599625`*^9, 
+   3.8577818213169813`*^9}, {3.8577818643638377`*^9, 3.857781891827623*^9}, {
+   3.857781939348132*^9, 3.8577819648945713`*^9}, {3.85778295788307*^9, 
+   3.857782960502617*^9}, {3.857783013900608*^9, 3.8577832286317225`*^9}, {
+   3.8577832586565323`*^9, 3.857783525977626*^9}, {3.857783565874338*^9, 
+   3.8577836409137554`*^9}, {3.85778367488471*^9, 3.857783675453269*^9}, {
+   3.857783987588722*^9, 3.8577839933723793`*^9}, {3.8577840970719233`*^9, 
+   3.8577841315485244`*^9}, {3.8577841951419363`*^9, 
+   3.8577843214200172`*^9}, {3.8577843606970863`*^9, 
+   3.8577843738151197`*^9}, {3.857784535288357*^9, 3.8577845485025177`*^9}, {
+   3.857784594182887*^9, 3.857784632954294*^9}, {3.857784675392563*^9, 
+   3.857784704697928*^9}, {3.8577848512388844`*^9, 3.857784853791473*^9}, {
+   3.857789373795623*^9, 3.8577894222557373`*^9}, {3.8577895449015365`*^9, 
+   3.857789575580695*^9}, {3.857789605741311*^9, 3.8577897454524455`*^9}, {
+   3.8577899014238815`*^9, 3.8577900784102345`*^9}, {3.857790173647241*^9, 
+   3.8577901818870707`*^9}, {3.857790218080612*^9, 3.857790228594077*^9}, 
+   3.8577903557439575`*^9, {3.8577910228785076`*^9, 3.857791023916999*^9}, {
+   3.8577911891858106`*^9, 3.8577912254774265`*^9}, {3.857791479895675*^9, 
+   3.8577915958190193`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i15$$ = 26, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {
+    "\"min\"" :> {$CellContext`i15$$ = 1}, 
+     "\"max\"" :> {$CellContext`i15$$ = 26}}, Typeset`bookmarkMode$$ = "Menu",
+     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`i15$$], 1, ""}, 1, 26, 1}}, Typeset`size$$ = 
+    Automatic, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`i15$24043$$ = 0}, 
+    PaneBox[
+     PanelBox[
+      DynamicWrapperBox[GridBox[{
+         {
+          ItemBox[
+           ItemBox[
+            TagBox[
+             StyleBox[GridBox[{
+                {"\<\"\"\>", 
+                 AnimatorBox[Dynamic[$CellContext`i15$$], {1, 26, 1},
+                  AnimationRate->3,
+                  AnimationRepetitions->1,
+                  AnimationRunTime->8.666992664337158,
+                  AnimationRunning->False,
+                  AnimationTimeIndex->8.333333333333334,
+                  
+                  AppearanceElements->{
+                   "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons",
+                     "DirectionButton"},
+                  AutoAction->False,
+                  DisplayAllSteps->True]}
+               },
+               AutoDelete->False,
+               
+               GridBoxAlignment->{
+                "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+               
+               GridBoxItemSize->{
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "ListAnimateLabel",
+              StripOnInput->False],
+             {"ControlArea", Top}],
+            Alignment->{Automatic, Inherited},
+            StripOnInput->False],
+           Background->None,
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            StyleBox[
+             PaneBox[
+              TagBox[
+               PaneSelectorBox[{1->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 2->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, 
+                  LineBox[{{5, 11}, {12, 4}}]},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 3->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 4->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {27, 6}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 5->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 6->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 7->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {31, 11}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 8->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 9->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {24, 17}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 10->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 11->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 12->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {30, 20}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 13->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {30, 20}}], 
+                   LineBox[{{30, 20}, {16, 15}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 14->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {30, 20}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 15->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 16->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 17->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}], 
+                   LineBox[{{37, 32}, {16, 36}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 18->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 19->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}], 
+                   LineBox[{{37, 32}, {15, 37}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 20->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}], 
+                   LineBox[{{37, 32}, {15, 37}}], 
+                   LineBox[{{15, 37}, {8, 20}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 21->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}], 
+                   LineBox[{{37, 32}, {15, 37}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 22->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}], 
+                   LineBox[{{37, 32}, {15, 37}}], 
+                   LineBox[{{15, 37}, {9, 35}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 23->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}], 
+                   LineBox[{{37, 32}, {15, 37}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 24->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 25->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}], 
+                   LineBox[{{37, 32}, {7, 39}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}], 26->
+                GraphicsBox[{
+                  {GrayLevel[0], PointSize[0.015], 
+                   PointBox[{{37, 32}, {5, 11}, {16, 36}, {34, 9}, {30, 20}, {
+                    9, 35}, {16, 15}, {15, 37}, {12, 4}, {28, 0}, {7, 39}, {
+                    27, 6}, {31, 11}, {24, 17}, {8, 20}, {36, 22}}], {
+                    InsetBox["1", {38, 33}], InsetBox["2", {6, 12}], 
+                    InsetBox["3", {17, 37}], InsetBox["4", {35, 10}], 
+                    InsetBox["5", {31, 21}], InsetBox["6", {10, 36}], 
+                    InsetBox["7", {17, 16}], InsetBox["8", {16, 38}], 
+                    InsetBox["9", {13, 5}], InsetBox["10", {29, 1}], 
+                    InsetBox["11", {8, 40}], InsetBox["12", {28, 7}], 
+                    InsetBox["13", {32, 12}], InsetBox["14", {25, 18}], 
+                    InsetBox["15", {9, 21}], InsetBox["16", {37, 23}]}}, {
+                   LineBox[{{5, 11}, {12, 4}}], LineBox[{{12, 4}, {28, 0}}], 
+                   LineBox[{{28, 0}, {34, 9}}], LineBox[{{34, 9}, {36, 22}}], 
+                   LineBox[{{36, 22}, {37, 32}}], 
+                   LineBox[{{37, 32}, {7, 39}}], LineBox[{{7, 39}, {5, 11}}]}},
+                 Frame->True,
+                 PlotRange->{{-5, 45}, {-5, 45}}]}, 
+                Dynamic[$CellContext`i15$$],
+                Alignment->Automatic,
+                ImageSize->All,
+                TransitionDirection->Horizontal,
+                TransitionDuration->0.5,
+                TransitionEffect->Automatic],
+               Identity,
+               Editable->True,
+               Selectable->True],
+              ImageMargins->10],
+             Deployed->False,
+             StripOnInput->False,
+             ScriptLevel->0,
+             GraphicsBoxOptions->{PreserveImageOptions->True},
+             Graphics3DBoxOptions->{PreserveImageOptions->True}],
+            Identity,
+            Editable->False,
+            Selectable->False],
+           Alignment->{Left, Center},
+           Background->GrayLevel[1],
+           Frame->1,
+           FrameStyle->GrayLevel[0, 0.2],
+           ItemSize->Automatic,
+           StripOnInput->False]}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Top}}, 
+          "RowsIndexed" -> {}},
+        GridBoxDividers->{
+         "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+          "RowsIndexed" -> {}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.7], {
+             Offset[0.5599999999999999]}, 
+            Offset[0.7]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.4], {
+             Offset[0.8]}, 
+            Offset[0.4]}, "RowsIndexed" -> {}}], If[
+        And[
+         CurrentValue["NotebookSelected"], 
+         CurrentValue["SelectionOver"]], 
+        Manipulate`Dump`ReadControllerState[
+         Map[Manipulate`Dump`updateOneVar[#, 
+           CurrentValue["PreviousFormatTime"], 
+           CurrentValue["CurrentFormatTime"]]& , {
+           
+           Manipulate`Dump`controllerLink[{$CellContext`i15$$, \
+$CellContext`i15$24043$$}, "X1", 
+            If["DefaultAbsolute", True, "JB1"], False, {1, 26, 1}, 26, 1.]}], 
+         CurrentValue[{
+          "ControllerData", {
+           "Gamepad", "Joystick", "Multi-Axis Controller"}}], {}]],
+       ImageSizeCache->{626., {330.5, 340.5}}],
+      DefaultBaseStyle->{},
+      FrameMargins->{{5, 5}, {5, 5}}],
+     BaselinePosition->Automatic,
+     ImageMargins->0],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "ListAnimate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.85778097213967*^9, {3.8577812678903093`*^9, 3.857781295339281*^9}, {
+   3.8577814453598056`*^9, 3.85778145397514*^9}, {3.857781501834081*^9, 
+   3.857781591071565*^9}, {3.8577816878026457`*^9, 3.857781692929592*^9}, {
+   3.8577832057239933`*^9, 3.857783231293784*^9}, {3.857783293239914*^9, 
+   3.8577833071228123`*^9}, {3.8577835046378975`*^9, 3.857783527088909*^9}, 
+   3.857783653986271*^9, 3.85778379900288*^9, {3.857784211948423*^9, 
+   3.857784222122154*^9}, 3.8577842617940345`*^9, {3.8577842946982403`*^9, 
+   3.8577843238472548`*^9}, {3.8577843638415394`*^9, 3.8577843749592543`*^9}, 
+   3.857784474620903*^9, 3.857784551701522*^9, 3.8577847089279823`*^9, 
+   3.8577901864767866`*^9, {3.8577902303652105`*^9, 3.8577902584873414`*^9}, 
+   3.8577912286443095`*^9, 3.8577916021810455`*^9, 3.8577932944082203`*^9}]
+}, Open  ]]
+},
+WindowSize->{958, 988},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
+Magnification:>1.6 Inherited,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2782, 53, 496, "Text"],
+Cell[CellGroupData[{
+Cell[3365, 77, 24866, 616, 4760, "Input"],
+Cell[28234, 695, 35602, 597, 722, "Output"]
+}, Open  ]]
+}
+]
+*)
+
